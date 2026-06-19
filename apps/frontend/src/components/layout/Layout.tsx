@@ -224,14 +224,37 @@ const LayoutContent = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfaf7] font-sans selection:bg-[#ff6b00] selection:text-white flex flex-col">
-      {/* AMBIENT-2050-BG */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="mesh-orb absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-[#ff6b00]/[0.14] blur-[110px]" />
-        <div className="mesh-orb absolute top-1/3 -right-40 h-[34rem] w-[34rem] rounded-full bg-[#ff9f1c]/[0.16] blur-[130px]" style={{ animationDelay: '4s' }} />
-        <div className="mesh-orb absolute bottom-0 left-1/4 h-[22rem] w-[22rem] rounded-full bg-[#ff6b00]/[0.12] blur-[100px]" style={{ animationDelay: '8s' }} />
+    <div className="min-h-screen bg-transparent font-sans selection:bg-[#ff6b00] selection:text-white flex flex-col">
+      {/* HEAVEN-2090-AMBIENT */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#fffaf5] via-[#fdfaf7] to-[#fff6ee]">
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="god-ray absolute left-1/2 top-1/4 h-[140vmax] w-[140vmax] -translate-x-1/2 -translate-y-1/2 opacity-[0.10]"
+          style={{ background: 'conic-gradient(from 0deg, transparent 0deg, #ffcf8f 4deg, transparent 10deg, transparent 90deg, #ffcf8f 94deg, transparent 100deg, transparent 180deg, #ffcf8f 184deg, transparent 190deg, transparent 270deg, #ffcf8f 274deg, transparent 280deg, transparent 360deg)' }}
+        />
+        <div className="mesh-orb absolute -top-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-[#ff6b00]/[0.22] blur-[120px]" />
+        <div className="mesh-orb absolute top-1/4 -right-40 h-[36rem] w-[36rem] rounded-full bg-[#ffcc66]/[0.30] blur-[140px]" style={{ animationDelay: '4s' }} />
+        <div className="mesh-orb absolute bottom-0 left-1/4 h-[24rem] w-[24rem] rounded-full bg-[#ff9f1c]/[0.22] blur-[110px]" style={{ animationDelay: '8s' }} />
+        <div className="mesh-orb absolute bottom-1/4 right-1/4 h-[20rem] w-[20rem] rounded-full bg-[#fff3e0]/[0.70] blur-[100px]" style={{ animationDelay: '6s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '6%', left: '12%', width: '3px', height: '3px', background: '#ffd9a0', animationDelay: '0s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '14%', left: '78%', width: '2px', height: '2px', background: '#ffffff', animationDelay: '1.2s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '22%', left: '45%', width: '4px', height: '4px', background: '#ffb066', animationDelay: '2.4s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '31%', left: '88%', width: '2px', height: '2px', background: '#ffffff', animationDelay: '0.6s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '38%', left: '8%', width: '3px', height: '3px', background: '#ffd9a0', animationDelay: '3.1s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '47%', left: '63%', width: '2px', height: '2px', background: '#ffffff', animationDelay: '1.8s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '54%', left: '25%', width: '4px', height: '4px', background: '#ffb066', animationDelay: '2.9s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '61%', left: '92%', width: '3px', height: '3px', background: '#ffffff', animationDelay: '0.3s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '68%', left: '15%', width: '2px', height: '2px', background: '#ffd9a0', animationDelay: '3.6s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '74%', left: '53%', width: '3px', height: '3px', background: '#ffffff', animationDelay: '1.5s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '81%', left: '35%', width: '2px', height: '2px', background: '#ffb066', animationDelay: '2.1s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '87%', left: '70%', width: '4px', height: '4px', background: '#ffd9a0', animationDelay: '0.9s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '92%', left: '18%', width: '2px', height: '2px', background: '#ffffff', animationDelay: '3.3s' }} />
+        <div className="sparkle-dot absolute rounded-full blur-[0.5px]" style={{ top: '96%', left: '60%', width: '3px', height: '3px', background: '#ffb066', animationDelay: '1.1s' }} />
+        <div
+          className="shine-sweep-layer absolute -inset-[50%] opacity-[0.035]"
+          style={{ background: 'linear-gradient(75deg, transparent 40%, #ffffff 50%, transparent 60%)' }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage:
               'linear-gradient(#1b1c1c 1px, transparent 1px), linear-gradient(90deg, #1b1c1c 1px, transparent 1px)',
@@ -239,8 +262,6 @@ const LayoutContent = ({ children }: LayoutProps) => {
           }}
         />
       </div>
-
-      {/* Main Header */}
       <header className={`sticky top-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-[#e8d5c4] bg-white/94 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(27,28,28,0.09)]" : "border-[#ebdcd0] bg-white"}`}>
         <div className="mx-auto flex min-h-16 max-w-[1440px] items-center gap-3 px-3 md:px-6">
           <div className="flex min-w-0 items-center gap-2">

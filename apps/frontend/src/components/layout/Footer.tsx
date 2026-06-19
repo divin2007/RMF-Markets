@@ -69,7 +69,7 @@ export const Footer = () => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group relative inline-block font-medium text-[#574e47] transition-colors duration-300 hover:text-[#ff6b00]"
+                  className="group relative block font-medium text-[#574e47] transition-colors duration-300 hover:text-[#ff6b00]"
                 >
                   {item.name}
                   <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gradient-to-r from-[#ff6b00] to-[#ff9f1c] transition-all duration-300 group-hover:w-full" />

@@ -739,7 +739,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-background-main text-text-primary selection:bg-primary selection:text-white">
+      <div className="min-h-screen bg-transparent text-text-primary selection:bg-primary selection:text-white">
         <div className="mx-auto max-w-[1440px] px-4 py-6 md:px-8 md:py-10">
           <div className="grid min-w-0 grid-cols-1 gap-5 md:gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.9fr)]">
             <main className="min-w-0 space-y-6 md:space-y-8">
