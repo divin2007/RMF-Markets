@@ -107,7 +107,7 @@ export default function AdminVideosPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 rounded-lg border border-[#e0e0e0] bg-white p-3 shadow-sm">
+        <div className="flex flex-wrap gap-2 rounded-2xl border border-[#e0e0e0] bg-white p-3 shadow-sm">
           {STATUS_TABS.map(t => (
             <button
               key={t.key}
@@ -126,10 +126,10 @@ export default function AdminVideosPage() {
         {/* Grid */}
         {loading ? (
           <div className="grid gap-5 sm:grid-cols-2">
-            {[1, 2, 3, 4].map(i => <div key={i} className="h-72 animate-pulse rounded-lg border border-[#e0e0e0] bg-white" />)}
+            {[1, 2, 3, 4].map(i => <div key={i} className="h-72 animate-pulse rounded-2xl border border-[#e0e0e0] bg-white" />)}
           </div>
         ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
             <VideoIcon className="mb-4 text-[#ff6b00]/50" size={44} />
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">No {tab === 'ALL' ? '' : tab.toLowerCase()} videos</p>
           </div>
@@ -139,7 +139,7 @@ export default function AdminVideosPage() {
               const status = video.moderationStatus || 'PENDING';
               const thumb = video.thumbnailUrl || video.videoUrl;
               return (
-                <article key={video._id} className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm transition hover:border-[#ff6b00]">
+                <article key={video._id} className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm transition hover:border-[#ff6b00]">
                   <a href={video.videoUrl ? resolveUploadUrl(video.videoUrl, 'product') : '#'} target="_blank" rel="noreferrer" className="relative block aspect-video overflow-hidden bg-[#1b1c1c]">
                     {thumb ? (
                       <img src={resolveUploadUrl(thumb, 'product')} alt={video.title || 'Video'} className="h-full w-full object-cover opacity-90" />

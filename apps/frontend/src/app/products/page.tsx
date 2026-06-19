@@ -178,7 +178,7 @@ export default function ProductsPage() {
       <div className="min-h-screen bg-[#fdfaf7] text-text-primary selection:bg-primary selection:text-white">
         <div className="mx-auto max-w-[1440px] px-4 py-6 md:px-8 md:py-10">
           
-          <section className="animate-reveal relative mb-8 overflow-hidden rounded-lg border border-[#e2bfb0] bg-[#1b1c1c] p-8 md:p-12">
+          <section className="animate-reveal relative mb-8 overflow-hidden rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-[#1b1c1c] p-8 md:p-12">
             <div className="absolute inset-0 bg-black/20" />
             <div className="relative z-10 max-w-2xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-sm bg-white px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#a04100]">
@@ -195,7 +195,7 @@ export default function ProductsPage() {
           </section>
 
           {/* Filtering and Search Section */}
-          <section className="animate-reveal [animation-delay:100ms] mb-8 grid gap-4 rounded-lg border border-[#e2bfb0] bg-white p-5 md:grid-cols-[1fr_auto]">
+          <section className="animate-reveal [animation-delay:100ms] mb-8 grid gap-4 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-5 md:grid-cols-[1fr_auto]">
             
             {/* Search Input Box */}
             <div className="relative">
@@ -205,7 +205,7 @@ export default function ProductsPage() {
                 placeholder="Search catalog products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-12 w-full rounded border border-[#e2bfb0] bg-white pl-12 pr-4 text-sm font-medium outline-none transition placeholder:text-[#8e7164] focus:border-primary focus:ring-2 focus:ring-[#ffedd5]"
+                className="h-12 w-full rounded shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white pl-12 pr-4 text-sm font-medium outline-none transition placeholder:text-[#8e7164] focus:border-primary focus:ring-2 focus:ring-[#ffedd5]"
               />
             </div>
 
@@ -242,7 +242,7 @@ export default function ProductsPage() {
                     className={`inline-flex min-h-9 w-full items-center justify-center rounded border px-2 py-2 text-center font-mono text-[9px] font-bold uppercase leading-tight transition-colors ${
                       isActive
                         ? 'border-primary bg-primary text-white'
-                        : 'border-[#e2bfb0] bg-white text-text-secondary hover:border-primary hover:text-primary hover:bg-[#ffedd5]'
+                        : ' bg-white text-text-secondary hover:border-primary hover:text-primary hover:bg-[#ffedd5]'
                     }`}
                   >
                     {cat.value === 'Made in Rwanda' && (
@@ -257,7 +257,7 @@ export default function ProductsPage() {
 
           {/* Dynamic recommendation alert details */}
           {user && selectedCategory === 'all' && !debouncedSearchQuery && (
-            <div className="animate-reveal [animation-delay:200ms] mb-6 flex items-center gap-3 rounded-lg border border-[#e2bfb0] bg-[#ffedd5]/35 p-4 text-[#7c3a00]">
+            <div className="animate-reveal [animation-delay:200ms] mb-6 flex items-center gap-3 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-[#ffedd5]/35 p-4 text-[#7c3a00]">
               <Sparkles className="text-primary shrink-0 animate-bounce" size={20} />
               <p className="text-sm font-bold leading-relaxed">
                 Tuned by your recommendation profile. Your preferred categories, browsing interests, and verified stores are prioritized at the top of the feed.
@@ -274,7 +274,7 @@ export default function ProductsPage() {
                 ))}
               </div>
             ) : !loading ? (
-              <div className="flex flex-col items-center justify-center rounded-lg border border-[#e2bfb0] bg-white p-16 text-center">
+              <div className="flex flex-col items-center justify-center rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-16 text-center">
                 <AlertCircle className="text-primary/40 mb-4" size={48} />
                 <h3 className="text-xl font-bold text-text-primary">No products match your criteria</h3>
                 <p className="mt-2 text-sm text-text-muted max-w-sm">
@@ -296,7 +296,7 @@ export default function ProductsPage() {
             {loading && (
               <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {Array.from({ length: 8 }).map((_, i) => (
-                  <div key={i} className="flex flex-col overflow-hidden rounded-lg border border-[#e2bfb0] bg-white p-4 animate-pulse">
+                  <div key={i} className="flex flex-col overflow-hidden rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 animate-pulse">
                     <div className="aspect-[4/3] rounded bg-[#f0eded]" />
                     <div className="mt-4 h-4 w-1/3 rounded bg-[#f0eded]" />
                     <div className="mt-2 h-6 w-3/4 rounded bg-[#f0eded]" />

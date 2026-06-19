@@ -72,7 +72,7 @@ export default function AdminContractsPage() {
 
         {/* Active banner */}
         {activeContract && (
-          <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-green-200 bg-green-50 p-5">
+          <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-green-200 bg-green-50 p-5">
             <div className="flex items-center gap-3">
               <CheckCircle2 className="text-green-600" size={20} />
               <div>
@@ -88,11 +88,11 @@ export default function AdminContractsPage() {
 
         {loading ? (
           <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
-            <div className="h-96 animate-pulse rounded-lg border border-[#e0e0e0] bg-white" />
-            <div className="h-96 animate-pulse rounded-lg border border-[#e0e0e0] bg-white" />
+            <div className="h-96 animate-pulse rounded-2xl border border-[#e0e0e0] bg-white" />
+            <div className="h-96 animate-pulse rounded-2xl border border-[#e0e0e0] bg-white" />
           </div>
         ) : sorted.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
             <FileText className="mb-4 text-[#ff6b00]/50" size={44} />
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">No contracts published yet</p>
           </div>
@@ -107,7 +107,7 @@ export default function AdminContractsPage() {
                     key={c.version || c._id}
                     type="button"
                     onClick={() => setSelected(c)}
-                    className={`w-full rounded-lg border p-4 text-left transition ${
+                    className={`w-full rounded-2xl border p-4 text-left transition ${
                       isSelected ? 'border-[#e05300] bg-[#fff7f0] ring-2 ring-[#ffedd5]' : 'border-[#e0e0e0] bg-white hover:border-[#ff6b00]'
                     }`}
                   >
@@ -126,7 +126,7 @@ export default function AdminContractsPage() {
             </aside>
 
             {/* Content viewer */}
-            <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+            <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
               {selected ? (
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#e0e0e0] bg-[#fcf9f8] p-5">

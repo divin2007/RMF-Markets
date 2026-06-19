@@ -46,7 +46,7 @@ const normalizedStatus = (status?: string) => String(status || 'unknown').replac
 
 function ReviewPanel({ eyebrow, title, children }: { eyebrow: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="min-w-0 rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+    <section className="min-w-0 rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
       <header className="border-b border-[#dfe7e2] bg-[#fcf9f8] p-5">
         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">{eyebrow}</p>
         <h2 className="mt-2 text-xl font-black tracking-normal text-[#1b1c1c]">{title}</h2>
@@ -222,7 +222,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ orderId
   return (
     <Layout>
       <div className="space-y-6 pb-20">
-        <section className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+        <section className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
           <div className="flex flex-col gap-6 border-b border-[#dfe7e2] bg-[#fcf9f8] p-6 xl:flex-row xl:items-end xl:justify-between">
             <div>
               <Link href="/admin?tab=disputes" className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">
@@ -326,7 +326,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ orderId
           </ReviewPanel>
         </section>
 
-        <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+        <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
           <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Evidence gallery</p>
@@ -339,7 +339,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ orderId
           {evidence.length ? (
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {evidence.map((item, index) => (
-                <figure key={`${item.url}-${index}`} className="overflow-hidden rounded-lg border border-[#dfe7e2] bg-[#f7faf8]">
+                <figure key={`${item.url}-${index}`} className="overflow-hidden rounded-2xl border border-[#dfe7e2] bg-[#f7faf8]">
                   <img src={resolveUploadUrl(item.url, item.service)} alt={item.title} className="h-44 w-full object-cover" />
                   <figcaption className="border-t border-[#dfe7e2] bg-white p-3">
                     <p className="text-sm font-black text-[#1b1c1c]">{item.title}</p>
@@ -355,7 +355,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ orderId
           )}
         </section>
 
-        <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+        <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Resolution console</p>

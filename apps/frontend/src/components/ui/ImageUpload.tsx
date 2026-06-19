@@ -151,7 +151,7 @@ export const ImageUpload = ({
   return (
     <div className="w-full">
       {label && <label className="mb-2 block text-sm font-bold text-[#1b1c1c]">{label}</label>}
-      <div className="relative flex min-h-[8rem] cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white p-4 text-center transition hover:border-[#ff6b00] hover:bg-[#fcf9f8]">
+      <div className="relative flex min-h-[8rem] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white p-4 text-center transition hover:border-[#ff6b00] hover:bg-[#fcf9f8]">
         {resolvedPreview && !isPdfPreview ? (
           <div className="relative aspect-video w-full overflow-hidden rounded-md">
             <img src={resolvedPreview} alt="Upload preview" loading="eager" fetchPriority="high" className="h-full w-full object-cover" />

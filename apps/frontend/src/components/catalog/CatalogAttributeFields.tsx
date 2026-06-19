@@ -64,7 +64,7 @@ export function CatalogAttributeFields({ category, attributes, onAttributesChang
   };
 
   return (
-    <section className="space-y-4 rounded-lg border border-[#d9e0db] bg-[#f7faf8] p-4">
+    <section className="space-y-4 rounded-2xl border border-[#d9e0db] bg-[#f7faf8] p-4">
       <div>
         <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#ff6b00]">Category intelligence</p>
         <h3 className="mt-1 text-lg font-black text-[#1b1c1c]">{category.label} attributes</h3>

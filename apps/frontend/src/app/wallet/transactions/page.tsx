@@ -102,22 +102,22 @@ export default function WalletTransactionsPage() {
 
         {/* Summary */}
         <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#414844]/60">Records shown</p>
             <p className="mt-2 text-2xl font-sans text-[#1b1c1c]">{filtered.length}</p>
           </div>
-          <div className="rounded-lg border border-[#e0e0e0] border-l-4 border-l-green-500 bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border border-[#e0e0e0] border-l-4 border-l-green-500 bg-white p-5 shadow-sm">
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#414844]/60">Total credit</p>
             <p className="mt-2 text-2xl font-sans text-green-700">+{totals.credit.toLocaleString()} <span className="text-xs text-[#414844]/40">RWF</span></p>
           </div>
-          <div className="rounded-lg border border-[#e0e0e0] border-l-4 border-l-[#e05300] bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border border-[#e0e0e0] border-l-4 border-l-[#e05300] bg-white p-5 shadow-sm">
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#414844]/60">Total debit</p>
             <p className="mt-2 text-2xl font-sans text-[#1b1c1c]">-{totals.debit.toLocaleString()} <span className="text-xs text-[#414844]/40">RWF</span></p>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+        <div className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
           <div className="mb-4 flex items-center gap-2">
             <Filter size={16} className="text-[#ff6b00]" />
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1b1c1c]">Filters</p>
@@ -172,7 +172,7 @@ export default function WalletTransactionsPage() {
         </div>
 
         {/* List */}
-        <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
           <div className="border-b border-[#e0e0e0] bg-[#fcf9f8] p-5">
             <p className="text-[10px] font-black uppercase tracking-[0.35em] text-[#1b1c1c]">Records</p>
           </div>

@@ -175,7 +175,7 @@ export default function SellerOnboardingPage() {
             </div>
           </div>
 
-          <div className="bg-white border border-[#e0e0e0] rounded-lg shadow-[0_40px_100px_-20px_rgba(18,18,18,0.15)] relative overflow-hidden">
+          <div className="bg-white border border-[#e0e0e0] rounded-2xl shadow-[0_40px_100px_-20px_rgba(18,18,18,0.15)] relative overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-1.5 bg-[#ffd700]"></div>
              
              <div className="p-12 md:p-20 space-y-16">
@@ -186,7 +186,7 @@ export default function SellerOnboardingPage() {
                        <h2 className="text-4xl font-sans tracking-normal text-[#1b1c1c]">{t('visual_identity_hub_selection')}</h2>
                     </div>
 
-                    <div className="p-10 border border-[#e0e0e0] rounded-lg bg-[#fcf9f8] space-y-8">
+                    <div className="p-10 border border-[#e0e0e0] rounded-2xl bg-[#fcf9f8] space-y-8">
                        <div className="space-y-2">
                           <p className="text-[10px] font-black text-[#1b1c1c] uppercase tracking-[0.3em]">{t('visual_identity_protocol')}</p>
                           <p className="text-xs text-[#414844]">{t('storefront_aesthetic_desc')}</p>
@@ -247,7 +247,7 @@ export default function SellerOnboardingPage() {
                          onClick={() => setMarketId('')}
                        >
                           <div className="space-y-4">
-                             <div className="w-8 h-8 border border-[#e0e0e0] rounded-lg text-[#1b1c1c] flex items-center justify-center text-xs">B</div>
+                             <div className="w-8 h-8 border border-[#e0e0e0] rounded-2xl text-[#1b1c1c] flex items-center justify-center text-xs">B</div>
                              <h3 className="text-2xl font-sans tracking-normal">{t('initialize_private_hub')}</h3>
                              <p className="text-[10px] text-[#414844] uppercase tracking-widest leading-relaxed opacity-60">{t('initialize_private_hub_desc')}</p>
                           </div>
@@ -262,7 +262,7 @@ export default function SellerOnboardingPage() {
                     </div>
 
                     {/* Operational Checklists (Persistent Architecture) */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#fcf9f8] p-10 border border-[#e0e0e0] rounded-lg">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-[#fcf9f8] p-10 border border-[#e0e0e0] rounded-2xl">
                        <div className="space-y-6">
                           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1b1c1c]">{t('operational_parameters')}</p>
                           <div className="grid grid-cols-2 gap-3">
@@ -316,7 +316,7 @@ export default function SellerOnboardingPage() {
                                 { key: 'education', translationKey: 'cat_education' },
                                 { key: 'other', translationKey: 'cat_other' },
                               ].map(cat => (
-                                <label key={cat.key} className="flex items-center gap-3 p-4 bg-white border border-[#e0e0e0] rounded-lg/10 cursor-pointer group hover:border-[#ff6b00] transition-colors">
+                                <label key={cat.key} className="flex items-center gap-3 p-4 bg-white border border-[#e0e0e0] rounded-2xl/10 cursor-pointer group hover:border-[#ff6b00] transition-colors">
                                    <div className={`w-6 h-6 border-2 flex items-center justify-center transition-all ${selectedCategories.includes(cat.key) ? 'bg-[#ff6b00] border-[#ebdcd0] text-white' : 'border-[#ebdcd0]/20'}`}>
                                       {selectedCategories.includes(cat.key) && <span className="text-[10px]">✓</span>}
                                    </div>
@@ -404,7 +404,7 @@ export default function SellerOnboardingPage() {
                            </div>
                         </div>
 
-                        <div className="space-y-6 bg-[#ff6b00] p-10 text-white rounded-lg">
+                        <div className="space-y-6 bg-[#ff6b00] p-10 text-white rounded-2xl">
                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#ffedd5]">{t('capability_registry')}</p>
                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                               {[
@@ -424,7 +424,7 @@ export default function SellerOnboardingPage() {
                            </div>
                         </div>
 
-                        <div className="h-[400px] border border-[#e0e0e0] rounded-lg relative group overflow-hidden">
+                        <div className="h-[400px] border border-[#e0e0e0] rounded-2xl relative group overflow-hidden">
                            <div className="absolute top-6 left-6 z-10 bg-[#ff6b00] text-white text-[9px] font-black px-4 py-2 uppercase tracking-widest shadow-md rounded">{t('interactive_geopoint_selector')}</div>
                            <MapPinPicker onLocationSelected={setLocation} />
                         </div>
@@ -440,7 +440,7 @@ export default function SellerOnboardingPage() {
                         <p className="text-xs text-[#414844]">{t('mandate_terminal_desc')}</p>
                      </div>
 
-                     <div className="rounded-lg border border-[#ebdcd0] bg-[#fcf9f8] p-6 shadow-sm">
+                     <div className="rounded-2xl border border-[#ebdcd0] bg-[#fcf9f8] p-6 shadow-sm">
                         <div className="flex flex-col justify-between gap-3 md:flex-row md:items-start pb-4 border-b border-[#ebdcd0]/30">
                            <div>
                              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ff6b00]">{t('active_seller_agreement')}</p>

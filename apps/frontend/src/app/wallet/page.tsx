@@ -26,12 +26,12 @@ export default function WalletPage() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <section className="rounded-lg border border-[#e0e0e0] bg-white p-8 shadow-sm">
+          <section className="rounded-2xl border border-[#e0e0e0] bg-white p-8 shadow-sm">
             <p className="text-[10px] font-black uppercase tracking-[0.35em] text-[#414844]/60">Available wallet balance</p>
             <h2 className="mt-4 text-5xl font-sans text-[#1b1c1c]">
               {loading ? '---' : '0'} <span className="text-xl text-[#414844]/40">RWF</span>
             </h2>
-            <div className="mt-8 rounded-lg border border-[#e9ded6] bg-[#fcf9f8] p-5 text-sm font-semibold leading-6 text-[#414844]">
+            <div className="mt-8 rounded-2xl border border-[#e9ded6] bg-[#fcf9f8] p-5 text-sm font-semibold leading-6 text-[#414844]">
               {wallet?.message || 'Wallet balances are disabled. Any legacy balance must be reconciled manually and future movement is Paypack-only.'}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -44,7 +44,7 @@ export default function WalletPage() {
             </div>
           </section>
 
-          <section className="rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+          <section className="rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
             <div className="flex items-center justify-between gap-4 border-b border-[#e0e0e0] p-6">
               <p className="text-[10px] font-black uppercase tracking-[0.35em] text-[#1b1c1c]">Accounting history</p>
               <Link href="/wallet/transactions" className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00] hover:text-[#e05300]">

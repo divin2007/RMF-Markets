@@ -309,7 +309,7 @@ export const OrderChat: React.FC<OrderChatProps> = ({
   };
 
   return (
-    <div className="flex h-[640px] flex-col overflow-hidden rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+    <div className="flex h-[640px] flex-col overflow-hidden rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
       {/* Tactical Header */}
       <div className="flex items-center justify-between gap-4 border-b border-[#dfe7e2] bg-[#e05300] px-5 py-4">
         <div className="flex items-center gap-4">
@@ -438,7 +438,7 @@ export const OrderChat: React.FC<OrderChatProps> = ({
                   <button
                     type="button"
                     onClick={() => setSelectedMessage(msg)}
-                    className={`max-w-[84%] overflow-hidden rounded-lg border text-left shadow-sm transition hover:-translate-y-0.5 ${
+                    className={`max-w-[84%] overflow-hidden rounded-2xl border text-left shadow-sm transition hover:-translate-y-0.5 ${
                       isQuote
                         ? 'border-[#ffedd5] bg-white'
                         : msg.type === 'COUNTER_QUOTE'

@@ -44,7 +44,7 @@ export default function WishlistPage() {
     <Layout>
       <div className="animate-reveal space-y-20 pb-20">
         {/* Tactical Header */}
-        <div className="relative bg-white text-[#1b1c1c] p-16 overflow-hidden group shadow-2xl border border-[#e0e0e0] rounded-lg">
+        <div className="relative bg-white text-[#1b1c1c] p-16 overflow-hidden group shadow-2xl border border-[#e0e0e0] rounded-2xl">
           <div className="absolute top-0 right-0 p-10 opacity-5">
              <div className="text-[150px] font-sans leading-none select-none">SAVE</div>
           </div>
@@ -71,7 +71,7 @@ export default function WishlistPage() {
               ))}
             </div>
           ) : products.length === 0 ? (
-            <div className="border border-dashed border-[#e0e0e0] rounded-lg bg-[#fcf9f8]/50 py-32 text-center group">
+            <div className="border border-dashed border-[#e0e0e0] rounded-2xl bg-[#fcf9f8]/50 py-32 text-center group">
                <div className="w-20 h-20 bg-white border border-[#e0e0e0] flex items-center justify-center mx-auto mb-10 group-hover:bg-[#e05300] group-hover:text-white transition-all shadow-sm">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                </div>

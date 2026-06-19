@@ -58,7 +58,7 @@ export default function MyReviewsPage() {
     <Layout>
       <div className="mx-auto max-w-4xl space-y-6 animate-reveal pb-20">
         {/* Header */}
-        <section className="overflow-hidden rounded-lg border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
+        <section className="overflow-hidden rounded-2xl border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#ffedd5]">
@@ -84,11 +84,11 @@ export default function MyReviewsPage() {
         {loading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="h-28 animate-pulse rounded-lg border border-[#e0e0e0] bg-white" />
+              <div key={i} className="h-28 animate-pulse rounded-2xl border border-[#e0e0e0] bg-white" />
             ))}
           </div>
         ) : list.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
             <Star className="mb-4 text-[#ff6b00]/50" size={44} />
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">No reviews yet</p>
             <p className="mt-2 max-w-md text-xs font-semibold text-[#8b938d]">
@@ -101,7 +101,7 @@ export default function MyReviewsPage() {
         ) : (
           <div className="space-y-4">
             {list.map(review => (
-              <article key={review._id} className="rounded-lg border border-[#e0e0e0] bg-white p-6 shadow-sm transition hover:border-[#ff6b00]">
+              <article key={review._id} className="rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm transition hover:border-[#ff6b00]">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-base font-black text-[#1b1c1c]">

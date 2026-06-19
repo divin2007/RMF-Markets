@@ -460,7 +460,7 @@ export function CategoryDrilldownPicker({
                         <button
                           type="button"
                           onClick={() => handleLeafSelect(selectedSubId)}
-                          className="mt-2 rounded-lg bg-[#ff6b00] px-4 py-2 text-xs font-bold text-white hover:bg-[#e05300] transition"
+                          className="mt-2 rounded-2xl bg-[#ff6b00] px-4 py-2 text-xs font-bold text-white hover:bg-[#e05300] transition"
                         >
                           Select "{index.byId.get(selectedSubId)?.label}"
                         </button>

@@ -222,7 +222,7 @@ export function SellerVideoFeed({
 
                   {video.productId?._id ? (
                     <Link href={getProductUrl(video.productId._id)} className="flex items-center gap-3 rounded-xl border border-[#eaded4] p-3 hover:border-[#ff6b00]/40">
-                      <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-lg bg-[#fff7ed]">
+                      <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-[#fff7ed]">
                         {productImage ? <img src={resolveUploadUrl(productImage, 'product')} alt="" className="h-full w-full object-cover" /> : <Store size={18} className="text-[#ff6b00]" />}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -246,7 +246,7 @@ export function SellerVideoFeed({
 
                   <div className="space-y-2">
                     {video.comments?.slice(-2).map((item, index) => (
-                      <p key={item._id || index} className="rounded-lg bg-[#fdfaf7] px-3 py-2 text-xs font-semibold text-[#414844]">
+                      <p key={item._id || index} className="rounded-2xl bg-[#fdfaf7] px-3 py-2 text-xs font-semibold text-[#414844]">
                         <span className="font-black text-[#1b1c1c]">{item.fullName || 'RMF user'}:</span> {item.text}
                       </p>
                     ))}

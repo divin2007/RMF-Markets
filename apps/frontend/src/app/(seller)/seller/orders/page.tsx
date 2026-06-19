@@ -55,7 +55,7 @@ export default function SellerOrdersPage() {
   return (
     <Layout>
       <div className="mx-auto max-w-6xl space-y-6 pb-20">
-        <section className="overflow-hidden rounded-lg border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
+        <section className="overflow-hidden rounded-2xl border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#ffedd5]">
@@ -82,7 +82,7 @@ export default function SellerOrdersPage() {
           ].map(([label, value, Icon]) => {
             const StatIcon = Icon as typeof Clock3;
             return (
-              <div key={label as string} className="rounded-lg border border-[#e0e0e0] bg-white p-4 shadow-sm">
+              <div key={label as string} className="rounded-2xl border border-[#e0e0e0] bg-white p-4 shadow-sm">
                 <StatIcon size={18} className="text-[#ff6b00]" />
                 <p className="mt-3 text-2xl font-black text-[#1b1c1c]">{value as React.ReactNode}</p>
                 <p className="text-xs font-bold text-[#5f7569]">{label as string}</p>
@@ -91,7 +91,7 @@ export default function SellerOrdersPage() {
           })}
         </div>
 
-        <section className="rounded-lg border border-[#e0e0e0] bg-white p-4 shadow-sm">
+        <section className="rounded-2xl border border-[#e0e0e0] bg-white p-4 shadow-sm">
           <div className="flex flex-col gap-3 md:flex-row">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#7b857f]" size={16} />
@@ -121,7 +121,7 @@ export default function SellerOrdersPage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
           {loading ? (
             <div className="space-y-3 p-4">
               {[1, 2, 3, 4].map(item => <div key={item} className="h-24 animate-pulse rounded-md bg-[#f0f4f1]" />)}

@@ -490,7 +490,7 @@ function MarketsContent() {
         return {
           icon: <BadgePercent className="text-white shrink-0" size={24} />,
           bg: 'bg-[#ff6b00] text-white relative overflow-hidden',
-          border: 'border border-[#e2bfb0]',
+          border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
           badge: 'bg-white/15 text-white border border-white/25 font-black',
           glow: '',
           textTitle: 'text-white',
@@ -504,7 +504,7 @@ function MarketsContent() {
           return {
             icon: <Sparkles className="text-primary shrink-0" size={22} />,
             bg: 'bg-white',
-            border: 'border border-[#e2bfb0]',
+            border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
             badge: 'bg-primary/10 text-primary border border-primary/20 font-bold',
             glow: 'hover:border-[#ff6b00]',
             textTitle: 'text-text-primary',
@@ -516,7 +516,7 @@ function MarketsContent() {
           return {
             icon: <Clock className="text-orange-500 shrink-0" size={22} />,
             bg: 'bg-white',
-            border: 'border border-[#e2bfb0]',
+            border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
             badge: 'bg-orange-100 text-orange-850 border border-orange-200',
             glow: 'hover:border-orange-400',
             textTitle: 'text-text-primary',
@@ -528,7 +528,7 @@ function MarketsContent() {
           return {
             icon: <TrendingUp className="text-red-500 shrink-0" size={22} />,
             bg: 'bg-white',
-            border: 'border border-[#e2bfb0]',
+            border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
             badge: 'bg-red-100 text-red-850 border border-red-200',
             glow: 'hover:border-red-400',
             textTitle: 'text-text-primary',
@@ -540,7 +540,7 @@ function MarketsContent() {
           return {
             icon: <Star className="text-amber-500 fill-amber-500 shrink-0" size={22} />,
             bg: 'bg-white',
-            border: 'border border-[#e2bfb0]',
+            border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
             badge: 'bg-amber-100 text-amber-850 border border-amber-200',
             glow: 'hover:border-amber-400',
             textTitle: 'text-text-primary',
@@ -550,7 +550,7 @@ function MarketsContent() {
           return {
             icon: <Sparkles className="text-primary shrink-0" size={22} />,
             bg: 'bg-white',
-            border: 'border border-[#e2bfb0]',
+            border: 'shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]',
             badge: 'bg-primary/10 text-primary border border-primary/20',
             glow: 'hover:border-primary',
             textTitle: 'text-text-primary',
@@ -560,7 +560,7 @@ function MarketsContent() {
     }, [title, isFullWidth]);
 
     return (
-      <div className={`space-y-4 rounded-lg p-4 transition-colors ${theme.bg} ${theme.border} ${theme.glow} shadow-sm`}>
+      <div className={`space-y-4 rounded-2xl p-4 transition-colors ${theme.bg} ${theme.border} ${theme.glow} shadow-sm`}>
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2.5">
@@ -603,7 +603,7 @@ function MarketsContent() {
     <Layout>
       <div className="mx-auto max-w-[1280px] space-y-8 px-0 py-2 pb-20 sm:px-4 sm:py-6 md:px-8 md:py-10 md:pb-24">
         {/* Cover Hero Section */}
-        <section className="relative h-[260px] w-full overflow-hidden rounded-xl border border-[#e2bfb0] shadow-md bg-[#ff6b00] md:h-[280px]">
+        <section className="relative h-[260px] w-full overflow-hidden rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] shadow-md bg-[#ff6b00] md:h-[280px]">
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent z-10"></div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
           <div className="relative z-20 h-full flex flex-col justify-end space-y-4 px-5 pb-6 sm:px-8 sm:pb-8">
@@ -626,7 +626,7 @@ function MarketsContent() {
 
         {requestedLocation && (
           <div className="animate-reveal [animation-delay:100ms] flex items-start gap-4 rounded-xl border border-primary/20 bg-primary/5 p-5 text-primary">
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-white text-primary shadow-sm">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white text-primary shadow-sm">
               <MapPin size={24} />
             </div>
             <div>
@@ -640,7 +640,7 @@ function MarketsContent() {
 
         {liveDataUnavailable && (
           <div className="animate-reveal [animation-delay:100ms] flex items-start gap-4 rounded-xl border border-accent-premium/30 bg-accent-premium/5 p-5 text-text-primary">
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-accent-premium/20 text-accent-premium">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-accent-premium/20 text-accent-premium">
               <WifiOff size={24} />
             </div>
             <div>
@@ -651,7 +651,7 @@ function MarketsContent() {
         )}
 
         {/* Discovery Filter Shelf */}
-        <section className="space-y-5 rounded-lg border border-[#e2bfb0] bg-white p-4 shadow-sm sm:p-6">
+        <section className="space-y-5 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 shadow-sm sm:p-6">
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-text-primary">
             <SlidersHorizontal size={18} className="text-primary animate-pulse" />
             {t('search_and_filters')}
@@ -780,7 +780,7 @@ function MarketsContent() {
         </section>
 
         {showCatalogResults && (
-          <section className="space-y-6 rounded-lg border border-[#e2bfb0] bg-white p-4 shadow-sm sm:p-6 md:p-8">
+          <section className="space-y-6 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 shadow-sm sm:p-6 md:p-8">
             <div className="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-end pb-4 border-b border-border-light">
               <div>
                 <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary">
@@ -797,7 +797,7 @@ function MarketsContent() {
             {productsLoading ? (
               <div className="grid grid-cols-1 gap-4 min-[430px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
                 {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="h-72 animate-pulse rounded-lg border border-[#e2bfb0] bg-background-surface" />
+                  <div key={i} className="h-72 animate-pulse rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-background-surface" />
                 ))}
               </div>
             ) : matchingProducts.length > 0 ? (
@@ -807,7 +807,7 @@ function MarketsContent() {
                 ))}
               </div>
             ) : (
-              <div className="rounded-lg border border-dashed border-[#e2bfb0] bg-background-surface p-12 text-center">
+              <div className="rounded-2xl border border-dashed  bg-background-surface p-12 text-center">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">{t('no_matching_products_yet')}</p>
                 <h3 className="mt-4 text-xl font-bold text-text-primary">
                   {madeInRwandaIntent ? t('mark_products_mir_prompt') : t('try_different_search_prompt')}
@@ -856,7 +856,7 @@ function MarketsContent() {
           </section>
         )}
 
-        <main className="space-y-6 pt-6 border-t border-[#e2bfb0]">
+        <main className="space-y-6 pt-6 border-t ">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-primary">{t('marketplace_directory')}</p>
@@ -873,7 +873,7 @@ function MarketsContent() {
           {loading ? (
             <div className="grid grid-cols-1 gap-4 min-[430px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-6">
               {[1, 2, 3, 4, 5].map(i => (
-                <div key={i} className="aspect-[4/5] bg-background-surface animate-pulse border border-[#e2bfb0] rounded-lg"></div>
+                <div key={i} className="aspect-[4/5] bg-background-surface animate-pulse shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] rounded-2xl"></div>
               ))}
             </div>
           ) : directoryMarkets.length > 0 ? (
@@ -892,7 +892,7 @@ function MarketsContent() {
               })}
             </div>
           ) : (
-            <div className="rounded-lg border border-dashed border-[#e2bfb0] bg-white p-12 text-center">
+            <div className="rounded-2xl border border-dashed  bg-white p-12 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-primary">{t('no_matching_markets')}</p>
               <h3 className="mt-4 text-xl font-bold text-text-primary">{t('try_different_market_search_prompt')}</h3>
             </div>
@@ -900,11 +900,11 @@ function MarketsContent() {
         </main>
 
         {/* Map Explorer Section */}
-        <section className="overflow-hidden rounded-xl border border-[#e2bfb0] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white shadow-sm">
           <div className="grid gap-0 lg:grid-cols-[0.35fr_0.65fr]">
             <div className="flex flex-col justify-between gap-6 border-b border-border-light/50 bg-[#fdfaf7] p-5 sm:p-8 lg:border-b-0 lg:border-r">
               <div className="space-y-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white shadow-md">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-md">
                   <MapPin size={22} />
                 </div>
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">{t('market_map')}</p>
@@ -914,11 +914,11 @@ function MarketsContent() {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="rounded border border-[#e2bfb0] bg-white p-4 shadow-sm">
+                <div className="rounded shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 shadow-sm">
                   <p className="text-2xl font-black text-text-primary">{allMarkets.length || marketsToRender.length}</p>
                   <p className="text-[9px] font-bold uppercase tracking-wider text-text-muted">{t('mapped_hubs')}</p>
                 </div>
-                <div className="rounded border border-[#e2bfb0] bg-white p-4 shadow-sm">
+                <div className="rounded shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 shadow-sm">
                   <p className="text-2xl font-black text-primary flex items-center gap-1.5">
                     {t('live_label')} 
                     <span className="flex h-2 w-2 relative">

@@ -99,7 +99,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
             {onClose && <button onClick={onClose} className="rmf-modal-close" aria-label="Close receipt">x</button>}
           </header>
           <div className="space-y-6 p-6">
-            <div className="rounded-lg border border-[#dfe7e2] bg-[#f7faf8] p-6 text-center">
+            <div className="rounded-2xl border border-[#dfe7e2] bg-[#f7faf8] p-6 text-center">
               <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Disbursed Amount</p>
               <p className="mt-3 text-4xl font-black text-[#1b1c1c]">{money(amount)}</p>
               <span className="mt-4 inline-flex rounded-full border border-[#dfe7e2] bg-white px-4 py-2 text-[10px] font-black uppercase tracking-widest text-[#405046]">{displayStatus}</span>
@@ -134,7 +134,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
               <p className="mt-1 text-xs font-bold uppercase tracking-widest text-[#6f7f76]">{orderDate}</p>
             </div>
             <div className="flex items-start gap-3">
-              <div className={`rounded-lg border px-4 py-3 text-right ${statusInfo.tone}`}>
+              <div className={`rounded-2xl border px-4 py-3 text-right ${statusInfo.tone}`}>
                 <p className="text-[9px] font-black uppercase tracking-widest opacity-70">Status</p>
                 <p className="mt-1 text-xs font-black uppercase tracking-widest">{statusInfo.label}</p>
               </div>
@@ -145,13 +145,13 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
           <div className="grid min-h-0 flex-1 overflow-y-auto lg:grid-cols-[1.15fr_0.85fr]">
             <main className="space-y-5 p-6">
               <section className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Buyer</p>
                   <p className="mt-3 text-lg font-black text-[#1b1c1c]">{buyer.fullName || 'Anonymous Buyer'}</p>
                   <p className="text-sm font-semibold text-[#5f7569]">{buyer.phone || 'Hidden'}</p>
                   {buyer.deliveryAddress?.address && <p className="mt-3 text-sm font-semibold leading-relaxed text-[#405046]">{buyer.deliveryAddress.address}</p>}
                 </div>
-                <div className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Seller</p>
                   <p className="mt-3 text-lg font-black text-[#1b1c1c]">{seller.fullName || 'Verified Seller'}</p>
                   <p className="text-sm font-semibold text-[#5f7569]">Stall {seller.stallId || 'N/A'}</p>
@@ -160,14 +160,14 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
               </section>
 
               {(isNegotiation || order.notes) && (
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">{isNegotiation ? 'Negotiation Brief' : 'Order Notes'}</p>
                   <p className="mt-3 text-sm font-semibold leading-relaxed text-[#405046]">{order.notes || 'No brief provided.'}</p>
                   {orderStatus === 'quote_sent' && <p className="mt-3 text-xs font-black uppercase tracking-widest text-[#b54708]">Current quote: {money(financials.subtotal)}</p>}
                 </section>
               )}
 
-              <section className="overflow-hidden rounded-lg border border-[#dfe7e2] bg-white">
+              <section className="overflow-hidden rounded-2xl border border-[#dfe7e2] bg-white">
                 <div className="border-b border-[#dfe7e2] bg-[#fcf9f8] px-5 py-4">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#1b1c1c]">Items Ordered</p>
                 </div>
@@ -190,7 +190,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
               </section>
 
               {isNegotiation && chatRole && (
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-4">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-4">
                   <OrderChat
                     orderId={orderId}
                     initialMessages={order.messages || []}
@@ -208,7 +208,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
             </main>
 
             <aside className="space-y-5 border-t border-[#dfe7e2] bg-white p-6 lg:border-l lg:border-t-0">
-              <section className="rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-5">
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Amount Due</p>
                 <p className="mt-3 text-4xl font-black tracking-normal text-[#1b1c1c]">{financials.totalAmount.toLocaleString()} <span className="text-sm font-black uppercase text-[#6f7f76]">RWF</span></p>
                 <div className="mt-5 space-y-3 border-t border-[#dfe7e2] pt-5">
@@ -226,7 +226,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
                 </div>
               </section>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Payment</p>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-sm font-black text-[#1b1c1c]">{order.payment?.method || 'Not selected'}</span>
@@ -239,7 +239,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
               </section>
 
               {(role === 'seller' || role === 'admin') && (
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Payouts</p>
                   <div className="mt-4 space-y-3">
                     <div className="flex justify-between text-sm"><span className="font-bold text-[#5f7569]">Seller</span><span className="font-black text-[#1b1c1c]">+{money(financials.sellerPayout)}</span></div>
@@ -249,7 +249,7 @@ export function ReceiptView({ order, role, onClose, onOrderUpdated }: ReceiptVie
               )}
 
               {order.delivery && (
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                   <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Delivery</p>
                   <div className="mt-4 space-y-3 text-sm">
                     <div className="flex justify-between"><span className="font-bold text-[#5f7569]">Status</span><span className="font-black text-[#1b1c1c]">{order.delivery.status || 'Pending'}</span></div>

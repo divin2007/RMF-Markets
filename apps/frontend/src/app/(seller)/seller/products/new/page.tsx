@@ -240,7 +240,7 @@ function NewProductPageContent() {
             </div>
          )}
 
-         <div className="bg-white border border-[#e0e0e0] rounded-lg shadow-2xl relative overflow-hidden">
+         <div className="bg-white border border-[#e0e0e0] rounded-2xl shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-2 bg-[#ff6b00]"></div>
             
             {activeTab === 'single' ? (
@@ -279,7 +279,7 @@ function NewProductPageContent() {
                           <label className="text-[10px] font-black uppercase tracking-[0.4em] text-[#1b1c1c]/40 text-center block">Product Photos</label>
                           <div className="grid grid-cols-2 gap-6">
                              {formData.images.map((img, i) => (
-                               <div key={i} className="aspect-square border border-[#e0e0e0] rounded-lg relative group overflow-hidden">
+                               <div key={i} className="aspect-square border border-[#e0e0e0] rounded-2xl relative group overflow-hidden">
                                   <img src={resolveUploadUrl(img, 'product')} alt={`Product image ${i + 1}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                                   <button 
                                     type="button" 
@@ -458,7 +458,7 @@ function NewProductPageContent() {
                              </div>
                           </label>
                           {formData.isNegotiable && (
-                            <div className="grid grid-cols-1 gap-8 rounded-lg border border-[#e0e0e0]/20 bg-white/70 p-5 md:grid-cols-2">
+                            <div className="grid grid-cols-1 gap-8 rounded-2xl border border-[#e0e0e0]/20 bg-white/70 p-5 md:grid-cols-2">
                               <div className="space-y-3">
                                 <label className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1b1c1c]/40">Min Price (RWF)</label>
                                 <input
@@ -601,7 +601,7 @@ function NewProductPageContent() {
                   </div>
                 ) : (
                   <form onSubmit={handleBulkUpload} className="space-y-8">
-                    <div className="border-2 border-dashed border-[#b8c7be]/50 rounded-lg p-14 bg-[#f7faf8] text-center relative group hover:border-[#ff6b00] transition duration-300">
+                    <div className="border-2 border-dashed border-[#b8c7be]/50 rounded-2xl p-14 bg-[#f7faf8] text-center relative group hover:border-[#ff6b00] transition duration-300">
                       <input
                         type="file"
                         accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

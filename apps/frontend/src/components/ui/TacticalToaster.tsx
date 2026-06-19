@@ -69,7 +69,7 @@ const SwipeableToast = ({ t }: { t: Toast }) => {
           cursor: isDragging ? 'grabbing' : 'grab',
           touchAction: 'none',
         }}
-        className="relative z-[9999] flex min-w-[300px] items-center gap-4 rounded-lg border border-[#d9e0db] bg-white p-4 text-[#1b1c1c] shadow-xl pointer-events-auto"
+        className="relative z-[9999] flex min-w-[300px] items-center gap-4 rounded-2xl border border-[#d9e0db] bg-white p-4 text-[#1b1c1c] shadow-xl pointer-events-auto"
       >
         <div className={`h-9 w-1.5 rounded-full ${t.type === 'error' ? 'bg-[#574e47]' : 'bg-[#d9560b]'}`}></div>
         <div className="flex-grow">

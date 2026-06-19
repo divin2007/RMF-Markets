@@ -43,7 +43,7 @@ export default function SellerQRPage() {
         </div>
 
         {/* Print Content Area */}
-        <div className="bg-white border border-[#e0e0e0] rounded-lg p-20 flex flex-col items-center justify-center space-y-12 shadow-2xl relative overflow-hidden print:border-none print:shadow-none print:p-0">
+        <div className="bg-white border border-[#e0e0e0] rounded-2xl p-20 flex flex-col items-center justify-center space-y-12 shadow-2xl relative overflow-hidden print:border-none print:shadow-none print:p-0">
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-24 h-24 border-t-8 border-l-8 border-[#ff6b00]"></div>
           <div className="absolute top-0 right-0 w-24 h-24 border-t-8 border-r-8 border-[#ff6b00]"></div>
@@ -93,7 +93,7 @@ export default function SellerQRPage() {
         </div>
 
         {/* Tactical Guidance */}
-        <div className="bg-[#ffedd5]/40 border border-[#ebdcd0] p-10 rounded-lg">
+        <div className="bg-[#ffedd5]/40 border border-[#ebdcd0] p-10 rounded-2xl">
            <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#1b1c1c] mb-6 flex items-center gap-4">
               <span className="text-[#ff6b00]">ℹ</span> Deployment Instructions
            </h3>

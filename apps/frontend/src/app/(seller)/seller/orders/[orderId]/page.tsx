@@ -276,7 +276,7 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
 
       <div className="animate-reveal space-y-6 pb-20">
         {/* Dossier Header */}
-        <div className="flex flex-col items-start justify-between gap-6 rounded-lg border border-[#0b4b32]/20 bg-[#e05300] p-6 text-white shadow-sm md:flex-row md:items-end md:p-8">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#0b4b32]/20 bg-[#e05300] p-6 text-white shadow-sm md:flex-row md:items-end md:p-8">
           <div>
             <div className="flex items-center gap-4 mb-4">
                <Link href="/seller/dashboard" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/60 hover:text-white group">
@@ -318,7 +318,7 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
           </div>
         </div>
 
-        <div className="grid gap-6 rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm lg:grid-cols-[1.35fr_0.65fr]">
+        <div className="grid gap-6 rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm lg:grid-cols-[1.35fr_0.65fr]">
           <div>
             <div className="mb-5 flex flex-col justify-between gap-3 border-b border-[#edf1ee] pb-4 md:flex-row md:items-center">
               <div>
@@ -351,7 +351,7 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
             />
           </div>
           <aside className="space-y-4">
-            <div className="rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-5">
+            <div className="rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-5">
               <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">
                 {isNegotiationWorkspace ? 'Current quote' : 'Chat status'}
               </p>
@@ -371,14 +371,14 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
                 </>
               )}
             </div>
-            <div className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+            <div className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
               <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Buyer</p>
               <p className="mt-3 text-lg font-black text-[#1b1c1c]">{order.buyer?.fullName || 'Anonymous'}</p>
               <p className="text-xs font-semibold text-[#5f7569]">{order.buyer?.phone || 'Contact hidden'}</p>
               <p className="mt-3 text-xs font-semibold leading-relaxed text-[#405046]">{order.buyer?.deliveryAddress?.address || 'No delivery location set yet'}</p>
             </div>
             {order.notes && (
-              <div className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">Order note</p>
                 <p className="mt-3 text-sm font-semibold leading-relaxed text-[#405046]">{order.notes}</p>
               </div>
@@ -450,7 +450,7 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
                   </div>
                </div>
 
-               <div className="bg-white border border-[#e0e0e0] rounded-lg p-10 space-y-8">
+               <div className="bg-white border border-[#e0e0e0] rounded-2xl p-10 space-y-8">
                   <p className="text-[9px] font-black text-[#1b1c1c] uppercase tracking-[0.4em] border-b border-[#e0e0e0] pb-4">Merchant Payout Schedule</p>
                   <div className="space-y-4">
                      <div className="flex justify-between items-center">
@@ -498,7 +498,7 @@ export default function SellerOrderDetailPage({ params }: { params: Promise<{ or
                             <p className="text-[11px] text-white/45 animate-pulse">
                               {order.deliveryId ? 'Awaiting Rider Assignment to Terminal...' : 'Delivery dispatch has not been created yet.'}
                             </p>
-                            <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                               {order.deliveryId ? (
                                 <>
                                   <div className="flex flex-wrap items-center gap-4 text-[9px] font-black uppercase tracking-widest text-white/55">

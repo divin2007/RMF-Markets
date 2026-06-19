@@ -30,10 +30,10 @@ export default function SellerReviewsPage() {
             <p className="text-sm text-text-secondary">Stall: {profile?.stallId}</p>
           </div>
           <nav className="space-y-2">
-            <Link href="/seller/dashboard" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-lg">Dashboard</Link>
-            <Link href="/seller/products" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-lg">Products</Link>
-            <Link href="/seller/reviews" className="block px-4 py-2 bg-primary/10 text-primary font-bold rounded-lg">Reviews</Link>
-            <Link href="/seller/earnings" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-lg">Earnings</Link>
+            <Link href="/seller/dashboard" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-2xl">Dashboard</Link>
+            <Link href="/seller/products" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-2xl">Products</Link>
+            <Link href="/seller/reviews" className="block px-4 py-2 bg-primary/10 text-primary font-bold rounded-2xl">Reviews</Link>
+            <Link href="/seller/earnings" className="block px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-2xl">Earnings</Link>
           </nav>
         </aside>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Work_Sans } from "next/font/google";
+import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { CartProvider } from "@/components/cart/CartContext";
@@ -9,10 +9,11 @@ import { WishlistProvider } from "@/context/WishlistContext";
 import { TacticalToaster } from "@/components/ui/TacticalToaster";
 import { NavigationProgressBar } from "@/components/ui/NavigationProgressBar";
 
-const workSans = Work_Sans({
+const workSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-work-sans",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const jetBrainsMono = JetBrains_Mono({

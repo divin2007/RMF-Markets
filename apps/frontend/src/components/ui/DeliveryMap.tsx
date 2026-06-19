@@ -148,7 +148,7 @@ export const DeliveryMap = ({ riderLocation, pickupLocation, dropoffLocation, st
           <input 
             type="text" 
             placeholder="Search landmarks..." 
-            className="w-full bg-background-card/90 backdrop-blur-md border border-border rounded-lg px-4 py-2 text-sm shadow-xl outline-none focus:ring-2 focus:ring-primary pr-10"
+            className="w-full bg-background-card/90 backdrop-blur-md border border-border rounded-2xl px-4 py-2 text-sm shadow-xl outline-none focus:ring-2 focus:ring-primary pr-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -157,7 +157,7 @@ export const DeliveryMap = ({ riderLocation, pickupLocation, dropoffLocation, st
           </div>
 
           {searchResults.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-background-card border border-border rounded-lg shadow-2xl overflow-hidden max-h-48 overflow-y-auto">
+            <div className="absolute top-full left-0 right-0 mt-2 bg-background-card border border-border rounded-2xl shadow-2xl overflow-hidden max-h-48 overflow-y-auto">
               {searchResults.map((result) => (
                 <button
                   key={`${result.provider || 'geo'}-${result.lat}-${result.lng}-${result.label}`}

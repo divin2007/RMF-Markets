@@ -245,7 +245,7 @@ export default function SellerProductsPage() {
   return (
     <Layout>
       <div className="animate-reveal space-y-8 pb-20">
-        <section className="flex flex-col items-start justify-between gap-6 rounded-lg border border-[#d9e0db] bg-white p-5 shadow-sm md:flex-row md:items-center md:p-6">
+        <section className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#d9e0db] bg-white p-5 shadow-sm md:flex-row md:items-center md:p-6">
           <div>
             <p className="mb-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#ff6b00]">Inventory Management</p>
             <h1 className="text-4xl font-black tracking-normal text-[#1b1c1c]">My Products</h1>
@@ -289,7 +289,7 @@ export default function SellerProductsPage() {
         </section>
 
         {showBulkUpload && (
-          <section className="animate-reveal rounded-lg border border-[#d9e0db] bg-white p-8 shadow-sm relative overflow-hidden space-y-6">
+          <section className="animate-reveal rounded-2xl border border-[#d9e0db] bg-white p-8 shadow-sm relative overflow-hidden space-y-6">
             <div className="absolute top-0 left-0 w-full h-1 bg-[#ff6b00]"></div>
             <div className="flex flex-col justify-between items-start gap-4 sm:flex-row sm:items-center">
               <div>
@@ -357,7 +357,7 @@ export default function SellerProductsPage() {
               </div>
             ) : (
               <form onSubmit={handleBulkUpload} className="space-y-4">
-                <div className="border-2 border-dashed border-[#b8c7be]/50 rounded-lg p-10 bg-[#f7faf8] text-center relative group hover:border-[#ff6b00] transition">
+                <div className="border-2 border-dashed border-[#b8c7be]/50 rounded-2xl p-10 bg-[#f7faf8] text-center relative group hover:border-[#ff6b00] transition">
                   <input
                     type="file"
                     accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
@@ -398,7 +398,7 @@ export default function SellerProductsPage() {
           </section>
         )}
 
-        <section className="grid grid-cols-1 items-center gap-4 rounded-lg border border-[#d9e0db] bg-white p-4 shadow-sm md:grid-cols-12">
+        <section className="grid grid-cols-1 items-center gap-4 rounded-2xl border border-[#d9e0db] bg-white p-4 shadow-sm md:grid-cols-12">
           <div className="relative md:col-span-4">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8b938d]" size={16} />
             <input
@@ -427,7 +427,7 @@ export default function SellerProductsPage() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-lg border border-[#d9e0db] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-2xl border border-[#d9e0db] bg-white shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[900px] text-left">
               <thead>
@@ -529,7 +529,7 @@ export default function SellerProductsPage() {
           )}
         </section>
 
-        <section className="rounded-lg border border-[#d9e0db] bg-[#e05300] p-6 text-white shadow-sm">
+        <section className="rounded-2xl border border-[#d9e0db] bg-[#e05300] p-6 text-white shadow-sm">
           <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#ffedd5]">Commercial standards</p>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-white/75">
             Keep photos clear, archive unavailable products instead of erasing them, and mark Made in Rwanda goods accurately so buyers can trust what they see.

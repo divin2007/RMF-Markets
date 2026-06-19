@@ -195,7 +195,7 @@ function OrderHistoryContent() {
                     </Link>
                     <button 
                       onClick={() => setReceiptOrder(order)} 
-                      className="flex-1 sm:flex-none text-center border border-[#e0e0e0] rounded-lg text-[#1b1c1c] px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] hover:border-[#ff6b00] transition-colors"
+                      className="flex-1 sm:flex-none text-center border border-[#e0e0e0] rounded-2xl text-[#1b1c1c] px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] hover:border-[#ff6b00] transition-colors"
                     >
                       {t('receipt')}
                     </button>

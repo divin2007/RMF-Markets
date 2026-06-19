@@ -93,7 +93,7 @@ export default function MarketPenaltiesPage() {
         </div>
 
         {!market ? (
-          <div className="rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-16 text-center">
+          <div className="rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-16 text-center">
             <AlertTriangle className="mx-auto mb-4 text-[#e05300]" size={40} />
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">Market not found</p>
             <button onClick={() => router.push('/admin?tab=markets')} className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-[#e05300] px-6 text-[10px] font-black uppercase tracking-widest text-white">
@@ -102,7 +102,7 @@ export default function MarketPenaltiesPage() {
           </div>
         ) : (
           <>
-            <form onSubmit={submit} className="space-y-6 rounded-lg border border-[#e0e0e0] bg-white p-6 shadow-sm">
+            <form onSubmit={submit} className="space-y-6 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
               <div>
                 <label className="mb-3 block text-xs font-black uppercase tracking-widest text-[#405046]">Penalty type</label>
                 <div className="grid gap-3 sm:grid-cols-3">
@@ -111,7 +111,7 @@ export default function MarketPenaltiesPage() {
                       key={opt.type}
                       type="button"
                       onClick={() => setType(opt.type)}
-                      className={`rounded-lg border p-4 text-left transition ${
+                      className={`rounded-2xl border p-4 text-left transition ${
                         type === opt.type ? 'border-[#e05300] bg-[#fff7f0] ring-2 ring-[#ffedd5]' : 'border-[#d9e0db] bg-white hover:border-[#ff6b00]'
                       }`}
                     >
@@ -154,7 +154,7 @@ export default function MarketPenaltiesPage() {
             </form>
 
             {/* Penalty history */}
-            <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+            <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
               <div className="border-b border-[#e0e0e0] bg-[#fcf9f8] p-5">
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1b1c1c]">Penalty history</p>
               </div>

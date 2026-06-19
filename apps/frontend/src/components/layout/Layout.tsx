@@ -32,6 +32,12 @@ const LayoutContent = ({ children }: LayoutProps) => {
   const [apexHome, setApexHome] = useState('/');
   const [isSubdomain, setIsSubdomain] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const [locationOpen, setLocationOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [detectedLocation, setDetectedLocation] = useState('');
@@ -219,8 +225,23 @@ const LayoutContent = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen bg-[#fdfaf7] font-sans selection:bg-[#ff6b00] selection:text-white flex flex-col">
+      {/* AMBIENT-2050-BG */}
+      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="mesh-orb absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-[#ff6b00]/[0.14] blur-[110px]" />
+        <div className="mesh-orb absolute top-1/3 -right-40 h-[34rem] w-[34rem] rounded-full bg-[#ff9f1c]/[0.16] blur-[130px]" style={{ animationDelay: '4s' }} />
+        <div className="mesh-orb absolute bottom-0 left-1/4 h-[22rem] w-[22rem] rounded-full bg-[#ff6b00]/[0.12] blur-[100px]" style={{ animationDelay: '8s' }} />
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              'linear-gradient(#1b1c1c 1px, transparent 1px), linear-gradient(90deg, #1b1c1c 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+          }}
+        />
+      </div>
+
       {/* Main Header */}
-      <header className="sticky top-0 z-50 border-b border-[#ebdcd0] bg-white">
+      <header className={`sticky top-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-[#e8d5c4] bg-white/94 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(27,28,28,0.09)]" : "border-[#ebdcd0] bg-white"}`}>
         <div className="mx-auto flex min-h-16 max-w-[1440px] items-center gap-3 px-3 md:px-6">
           <div className="flex min-w-0 items-center gap-2">
             <button
@@ -233,7 +254,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
               {mobileMenuOpen ? <X size={21} /> : <Menu size={21} />}
             </button>
             <a href={apexHome} className="flex items-center gap-2">
-              <span className="text-2xl font-black tracking-normal text-[#a04100]">RMF</span>
+              <span className="text-2xl font-black tracking-normal bg-gradient-to-r from-[#a04100] via-[#ff6b00] to-[#ff9340] bg-clip-text text-transparent">RMF</span>
             </a>
           </div>
 
@@ -244,7 +265,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
               placeholder={isDashboard ? 'Search orders or products...' : (t('home_search_placeholder') || 'Search markets or products...')}
               value={globalSearch}
               onChange={(e) => setGlobalSearch(e.target.value)}
-              className="h-11 w-full rounded border border-[#e2bfb0] bg-[#fbf9f8] pl-12 pr-4 text-sm font-medium text-[#1b1c1c] outline-none transition placeholder:text-[#8e7164] focus:border-[#ff6b00] focus:bg-white focus:ring-2 focus:ring-[#ffedd5]"
+              className="h-11 w-full rounded shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-[#fbf9f8] pl-12 pr-4 text-sm font-medium text-[#1b1c1c] outline-none transition placeholder:text-[#8e7164] focus:border-[#ff6b00] focus:bg-white focus:ring-2 focus:ring-[#ffedd5]"
             />
           </form>
 
@@ -259,7 +280,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
                   key={item.href}
                   href={platformHref(item.href)}
                   className={`border-b-2 px-1 py-5 text-sm font-medium transition-colors ${
-                    isNavActive(item.href) ? 'border-[#a04100] text-[#a04100]' : 'border-transparent text-[#574e47] hover:text-[#a04100]'
+                    isNavActive(item.href) ? 'border-[#ff6b00] text-[#ff6b00]' : 'border-transparent text-[#574e47] hover:text-[#a04100]'
                   }`}
                 >
                   {item.label}
@@ -282,7 +303,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
                   <ChevronDown size={14} />
                 </button>
                 {locationOpen && (
-                  <div className="absolute right-0 top-11 w-[calc(100vw-1.5rem)] max-w-80 overflow-hidden rounded-lg border border-[#ebdcd0] bg-white shadow-xl">
+                  <div className="absolute right-0 top-11 w-[calc(100vw-1.5rem)] max-w-80 overflow-hidden rounded-2xl border border-[#ebdcd0] bg-white shadow-xl">
                     <div className="border-b border-[#f2e8e0] bg-[#fdfaf7] p-3">
                       <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#ff6b00]">Choose market area</p>
                       <p className="mt-1 text-xs font-semibold text-[#574e47]">Markets are filtered by service area and coordinates when available.</p>
@@ -365,7 +386,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
                   <ChevronDown size={14} />
                 </button>
                 {accountOpen && (
-                  <div className="absolute right-0 top-11 w-[calc(100vw-1.5rem)] max-w-60 overflow-hidden rounded-lg border border-[#ebdcd0] bg-white shadow-xl">
+                  <div className="absolute right-0 top-11 w-[calc(100vw-1.5rem)] max-w-60 overflow-hidden rounded-2xl border border-[#ebdcd0] bg-white shadow-xl">
                     <div className="border-b border-[#f2e8e0] bg-[#fdfaf7] p-3">
                       <p className="truncate text-sm font-black text-[#1b1c1c]">{user.fullName || user.email}</p>
                       <p className="mt-1 text-[11px] font-black uppercase tracking-[0.12em] text-[#ff6b00]">{user.role?.toLowerCase()}</p>
@@ -447,7 +468,7 @@ const LayoutContent = ({ children }: LayoutProps) => {
               })}
             </div>
             {!isDashboard && (
-              <div className="mt-4 rounded-lg border border-[#f2e8e0] bg-[#fdfaf7] p-3">
+              <div className="mt-4 rounded-2xl border border-[#f2e8e0] bg-[#fdfaf7] p-3">
                 <p className="mb-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#ff6b00]">Market areas</p>
                 <div className="grid grid-cols-2 gap-2">
                   {locationOptions.slice(0, 4).map(option => (

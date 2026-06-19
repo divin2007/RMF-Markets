@@ -64,7 +64,7 @@ export default function SellerLayout({ children }: { children: React.ReactNode }
     return (
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center p-12 animate-reveal">
-          <div className="max-w-2xl w-full bg-white border border-[#e0e0e0] rounded-lg p-16 shadow-2xl">
+          <div className="max-w-2xl w-full bg-white border border-[#e0e0e0] rounded-2xl p-16 shadow-2xl">
             <div className="h-2 bg-[#ffedd5] -mx-16 -mt-16 mb-16" />
             <div className="text-center space-y-4 mb-12">
               <p className="text-[11px] font-black text-[#ff6b00] uppercase tracking-[0.22em]">Status: Under Review</p>

@@ -227,7 +227,7 @@ export const RiderMap = ({ marketId, centerLat = -1.9441, centerLng = 30.0619, m
       <div className="absolute top-4 right-4 z-[1000] flex flex-col gap-2">
         <button 
           onClick={() => setMapMode(mapMode === 'standard' ? 'satellite' : 'standard')}
-          className="bg-white p-2 rounded-lg shadow-lg border border-border hover:bg-background-surface transition-colors flex items-center gap-2 text-xs font-bold text-text-primary"
+          className="bg-white p-2 rounded-2xl shadow-lg border border-border hover:bg-background-surface transition-colors flex items-center gap-2 text-xs font-bold text-text-primary"
         >
           {mapMode === 'standard' ? 'Satellite View' : 'Standard View'}
         </button>

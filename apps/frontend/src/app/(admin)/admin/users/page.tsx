@@ -103,7 +103,7 @@ export default function AdminUsersPage() {
         </div>
 
         {/* Note: no bulk-list endpoint exists in user-service yet. */}
-        <div className="flex items-start gap-3 rounded-lg border border-[#ffe0c2] bg-[#fff7ed] p-4">
+        <div className="flex items-start gap-3 rounded-2xl border border-[#ffe0c2] bg-[#fff7ed] p-4">
           <AlertTriangle size={18} className="mt-0.5 flex-shrink-0 text-[#b45309]" />
           <p className="text-xs font-semibold leading-5 text-[#92400e]">
             Bulk user listing requires a backend <code className="rounded bg-white/70 px-1 font-mono">GET /users</code> endpoint, which is not yet
@@ -112,7 +112,7 @@ export default function AdminUsersPage() {
         </div>
 
         {/* Lookup */}
-        <form onSubmit={lookup} className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+        <form onSubmit={lookup} className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
           <label className="mb-2 block text-xs font-black uppercase tracking-widest text-[#405046]">User ID</label>
           <div className="flex flex-col gap-3 sm:flex-row">
             <div className="relative flex-1">
@@ -137,14 +137,14 @@ export default function AdminUsersPage() {
 
         {/* Result */}
         {searched && !loading && !result && (
-          <div className="rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-12 text-center">
+          <div className="rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-12 text-center">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">No user found</p>
             <p className="mt-2 text-xs font-semibold text-[#8b938d]">Check the ID and try again.</p>
           </div>
         )}
 
         {result && (
-          <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+          <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
             <div className="border-b border-[#e0e0e0] bg-[#fcf9f8] p-6">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>

@@ -391,7 +391,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug?:
                       <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
                       <span className="text-[10px] font-black text-primary uppercase tracking-widest">Image Showcase</span>
                     </div>
-                    <span className="text-[9px] font-black text-[#80756c] bg-white border border-[#ebdcd0] px-3 py-1 rounded-lg shadow-sm">
+                    <span className="text-[9px] font-black text-[#80756c] bg-white border border-[#ebdcd0] px-3 py-1 rounded-2xl shadow-sm">
                       {activeImageIndex + 1} / {displayedImages.length}
                     </span>
                   </div>
@@ -536,7 +536,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug?:
                       RWF
                     </span>}
                     {effectiveUnit && (
-                      <span className="text-[8px] font-black text-[#80756c] uppercase tracking-widest bg-white border border-[#ebdcd0] px-2.5 py-0.5 rounded-lg ml-2 shadow-sm">
+                      <span className="text-[8px] font-black text-[#80756c] uppercase tracking-widest bg-white border border-[#ebdcd0] px-2.5 py-0.5 rounded-2xl ml-2 shadow-sm">
                         per {effectiveUnit}
                       </span>
                     )}

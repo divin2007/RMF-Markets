@@ -216,7 +216,7 @@ export default function LoginPage() {
 
           <button
             onClick={handleGoogleAuth}
-            className="flex w-full items-center justify-center gap-4 rounded-lg border border-[#d9e0db] bg-white py-4 text-sm font-bold text-[#1b1c1c] transition-all hover:border-[#ff6b00]"
+            className="flex w-full items-center justify-center gap-4 rounded-2xl border border-[#d9e0db] bg-white py-4 text-sm font-bold text-[#1b1c1c] transition-all hover:border-[#ff6b00]"
           >
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="h-5 w-5" />
             {t('login_google')}

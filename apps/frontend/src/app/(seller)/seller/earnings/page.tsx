@@ -193,7 +193,7 @@ export default function SellerEarningsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           {/* Main Wallet Card */}
           <div className="lg:col-span-2 space-y-16">
-            <div className="bg-[#e05300] text-white p-16 relative overflow-hidden group shadow-2xl border border-[#e0e0e0] rounded-lg">
+            <div className="bg-[#e05300] text-white p-16 relative overflow-hidden group shadow-2xl border border-[#e0e0e0] rounded-2xl">
                <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffd700]/5 rounded-full -mr-32 -mt-32 group-hover:scale-110 transition-transform duration-1000"></div>
                <div className="relative z-10">
                   <p className="text-[11px] font-black uppercase tracking-[0.4em] text-[#ff6b00] mb-6">Paypack Settled</p>
@@ -224,7 +224,7 @@ export default function SellerEarningsPage() {
                </div>
 
                {/* Advanced Filter Control Center */}
-               <div className="bg-white border border-[#e0e0e0] p-8 shadow-sm space-y-8 rounded-lg">
+               <div className="bg-white border border-[#e0e0e0] p-8 shadow-sm space-y-8 rounded-2xl">
                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                    
                    {/* Description & ID Search */}
@@ -319,7 +319,7 @@ export default function SellerEarningsPage() {
                </div>
 
                {/* Log Grid */}
-               <div className="bg-white border border-[#e0e0e0] rounded-lg overflow-hidden shadow-sm">
+               <div className="bg-white border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-sm">
                   <table className="w-full text-left">
                     <thead>
                       <tr className="bg-[#f0eded]/50 border-b-2 border-[#e0e0e0]">
@@ -370,7 +370,7 @@ export default function SellerEarningsPage() {
 
           {/* Payout Action Sidebar */}
           <div className="space-y-12">
-            <div className="bg-white border border-[#e0e0e0] rounded-lg p-10 shadow-2xl">
+            <div className="bg-white border border-[#e0e0e0] rounded-2xl p-10 shadow-2xl">
               <h3 className="text-[11px] font-black uppercase tracking-[0.4em] text-[#1b1c1c] mb-12">Paypack Settlement</h3>
               <form onSubmit={requestPayout} className="space-y-8">
                 <div className="space-y-4">

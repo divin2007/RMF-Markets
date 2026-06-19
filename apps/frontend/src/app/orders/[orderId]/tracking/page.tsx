@@ -80,7 +80,7 @@ const IndividualReviewCard = ({
   };
 
   return (
-    <div className="rounded-lg border border-[#dfe7e2] bg-white p-4 shadow-sm">
+    <div className="rounded-2xl border border-[#dfe7e2] bg-white p-4 shadow-sm">
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#ff6b00]">{target.type}</p>
@@ -182,7 +182,7 @@ const OrderReviewPanel = ({
   ].filter(Boolean) as ReviewTarget[];
 
   return (
-    <section className="mb-8 rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-5 shadow-sm">
+    <section className="mb-8 rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-5 shadow-sm">
       <div className="mb-5">
         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Order reviews</p>
         <h2 className="mt-1 text-2xl font-black text-[#1b1c1c]">Review each part separately</h2>
@@ -270,7 +270,7 @@ const DeliveryChatCard = ({
   };
 
   return (
-    <div className="flex h-[520px] flex-col overflow-hidden rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+    <div className="flex h-[520px] flex-col overflow-hidden rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
       <div className="border-b border-[#dfe7e2] bg-[#e05300] px-5 py-4">
         <h3 className="text-sm font-black text-white">Rider delivery chat</h3>
         <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/55">
@@ -285,7 +285,7 @@ const DeliveryChatCard = ({
         ) : (
           chatHistory.map((msg, i) => (
             <div key={`${msg.timestamp || 'message'}-${i}`} className={`flex flex-col ${msg.senderRole === userRole ? 'items-end' : 'items-start'}`}>
-              <div className={`max-w-[80%] overflow-hidden rounded-lg text-sm ${msg.senderRole === userRole ? 'bg-primary text-white rounded-br-none' : 'bg-background-surface text-text-primary rounded-bl-none'}`}>
+              <div className={`max-w-[80%] overflow-hidden rounded-2xl text-sm ${msg.senderRole === userRole ? 'bg-primary text-white rounded-br-none' : 'bg-background-surface text-text-primary rounded-bl-none'}`}>
                 {msg.imageUrl && <img src={resolveUploadUrl(msg.imageUrl, 'order')} alt="Delivery chat attachment" className="max-h-64 w-full object-cover" />}
                 <div className="p-3">{msg.content || msg.text || msg.message}</div>
               </div>
@@ -308,7 +308,7 @@ const DeliveryChatCard = ({
           onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
           placeholder={t('chat_type_message')} 
           disabled={isClosed}
-          className="flex-1 bg-background-surface border border-border rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
+          className="flex-1 bg-background-surface border border-border rounded-2xl px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
         />
         <Button size="sm" onClick={() => sendMessage()} disabled={isClosed || !deliveryId || !userId || isSending || !message.trim()}>{t('confirm')}</Button>
         </div>
@@ -532,7 +532,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ orderI
           <OrderStatusTimeline currentStatus={currentStatus} />
         </Card>
 
-        <section className="mb-8 rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+        <section className="mb-8 rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
           <div className="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Escrow procedure</p>
@@ -569,7 +569,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ orderI
         <OrderReviewPanel order={order} deliveryData={deliveryData} />
 
         <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2 rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+            <div className="lg:col-span-2 rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
               <div className="mb-5 flex flex-col justify-between gap-3 border-b border-[#edf1ee] pb-4 md:flex-row md:items-center">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">
@@ -626,7 +626,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ orderI
               )}
             </div>
             <div className="space-y-4">
-              <div className="rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-5">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-5">
                 <p className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">
                   {isNegotiationPhase ? 'Current quote' : 'Order total'}
                 </p>
@@ -805,7 +805,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ orderI
                         value={pickupPhotoUrl}
                         onChange={setPickupPhotoUrl}
                       />
-                      <div className="rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-3">
+                      <div className="rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-3">
                         <div className="mb-3 flex items-center justify-between gap-3">
                           <div>
                             <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#ff6b00]">Stall QR scan</p>
@@ -916,14 +916,14 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ orderI
                  <p className="text-sm text-text-secondary mb-4">{t('track_dispute_desc')}</p>
                  
                  {order.status === 'disputed' ? (
-                   <div className="bg-status-warning/10 text-status-warning p-4 rounded-lg text-sm font-medium">
+                   <div className="bg-status-warning/10 text-status-warning p-4 rounded-2xl text-sm font-medium">
                      {t('track_dispute_raised')}
                    </div>
                  ) : (
                    <div className="space-y-4">
                      {/* MD9 fix: controlled textarea — no more document.getElementById */}
                      <textarea
-                       className="w-full bg-background-card border border-border rounded-lg p-3 text-sm focus:ring-1 focus:ring-primary outline-none"
+                       className="w-full bg-background-card border border-border rounded-2xl p-3 text-sm focus:ring-1 focus:ring-primary outline-none"
                        placeholder={t('track_dispute_placeholder')}
                        rows={3}
                        value={disputeReason}

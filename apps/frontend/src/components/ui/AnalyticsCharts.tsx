@@ -26,7 +26,7 @@ export const AnalyticsCharts = ({ orders = [], data, type, hidePerformance = fal
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return <div className="h-[320px] w-full animate-pulse rounded-lg border border-[#e0e0e0] bg-[#f7faf8]" />;
+  if (!isMounted) return <div className="h-[320px] w-full animate-pulse rounded-2xl border border-[#e0e0e0] bg-[#f7faf8]" />;
   // 1. Process data for Revenue Trend (Last 7 days)
   let revenueData = [];
   if (data?.trends) {
@@ -101,7 +101,7 @@ export const AnalyticsCharts = ({ orders = [], data, type, hidePerformance = fal
   return (
     <div className="mb-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
       {/* Revenue Trend */}
-      <div className="group relative rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+      <div className="group relative rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
         <h3 className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.16em] text-[#1b1c1c]">
           <span className="h-2 w-2 rounded-full bg-[#ea580c]"></span>
           Revenue Trend (Last 7 Days)
@@ -131,7 +131,7 @@ export const AnalyticsCharts = ({ orders = [], data, type, hidePerformance = fal
       </div>
 
       {/* Distribution */}
-      <div className="group relative rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+      <div className="group relative rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
         <h3 className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.16em] text-[#1b1c1c]">
           <span className="h-2 w-2 rounded-full bg-[#e05300]"></span>
           Order Status Distribution
@@ -165,7 +165,7 @@ export const AnalyticsCharts = ({ orders = [], data, type, hidePerformance = fal
 
       {/* Performance Bar Chart */}
       {!hidePerformance && (
-        <div className="mt-1 rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm lg:col-span-2">
+        <div className="mt-1 rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm lg:col-span-2">
           <h3 className="mb-5 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.16em] text-[#1b1c1c]">
             <span className="h-2 w-2 rounded-full bg-[#ff6b00]"></span>
             {type === 'admin' ? 'Top Selling Vendors' : 'Top Selling Products'}

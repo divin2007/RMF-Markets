@@ -747,7 +747,7 @@ function AdminDashboardContent() {
 
           {activeTab === 'operations' && (
             <div className="space-y-6 animate-reveal">
-              <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Operations command</p>
@@ -777,7 +777,7 @@ function AdminDashboardContent() {
                   { label: 'Failed notifications', value: operationCounts.failedNotifications || 0, tone: 'border-l-[#dc2626]' },
                   { label: 'Pending videos', value: operationCounts.pendingVideos || 0, tone: 'border-l-[#059669]' },
                 ].map(item => (
-                  <div key={item.label} className={`rounded-lg border border-[#dfe7e2] border-l-4 ${item.tone} bg-white p-5 shadow-sm`}>
+                  <div key={item.label} className={`rounded-2xl border border-[#dfe7e2] border-l-4 ${item.tone} bg-white p-5 shadow-sm`}>
                     <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#5f7569]">{item.label}</p>
                     <p className="mt-3 text-3xl font-sans text-[#1b1c1c]">{item.value}</p>
                   </div>
@@ -785,7 +785,7 @@ function AdminDashboardContent() {
               </div>
 
               <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-                <div className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Rider dispatch live logic</p>
                     <h3 className="mt-1 text-xl font-sans text-[#1b1c1c]">Progressive radius assignments</h3>
@@ -819,7 +819,7 @@ function AdminDashboardContent() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Deployment readiness</p>
                     <h3 className="mt-1 text-xl font-sans text-[#1b1c1c]">External services</h3>
@@ -841,7 +841,7 @@ function AdminDashboardContent() {
               </div>
 
               <div className="grid gap-6 xl:grid-cols-2">
-                <div className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Refund and escrow money flow</p>
                     <h3 className="mt-1 text-xl font-sans text-[#1b1c1c]">Payout queue</h3>
@@ -871,7 +871,7 @@ function AdminDashboardContent() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <div className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Notification channels</p>
                     <h3 className="mt-1 text-xl font-sans text-[#1b1c1c]">Failed delivery log</h3>
@@ -1048,7 +1048,7 @@ function AdminDashboardContent() {
 
               {/* Platform P&L Summary */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white border border-[#e0e0e0] rounded-lg p-8">
+                <div className="bg-white border border-[#e0e0e0] rounded-2xl p-8">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1b1c1c] mb-4 border-b border-[#e0e0e0] pb-2">Platform Revenue</p>
                   <p className="text-3xl font-sans text-[#1b1c1c]">{platformRevenue.toLocaleString()}</p>
                   <div className="text-[10px] font-bold text-[#414844] mt-4 space-y-1">
@@ -1064,7 +1064,7 @@ function AdminDashboardContent() {
                     <p>Riders: {totalRiderPayout.toLocaleString()}</p>
                   </div>
                 </div>
-                <div className="bg-[#e05300] text-white border border-[#e0e0e0] rounded-lg p-8">
+                <div className="bg-[#e05300] text-white border border-[#e0e0e0] rounded-2xl p-8">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 mb-4 border-b border-white/20 pb-2">Net Position</p>
                   <p className="text-3xl font-sans text-[#ff6b00]">{(platformRevenue - (totalSellerPayout + totalRiderPayout)).toLocaleString()}</p>
                   <div className="text-[10px] font-bold text-white/40 mt-4 space-y-1">
@@ -1088,7 +1088,7 @@ function AdminDashboardContent() {
                   <button
                     key={t.key}
                     onClick={() => setApprovalSubTab(t.key)}
-                    className={`flex flex-1 items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-wider transition-all ${
+                    className={`flex flex-1 items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition-all ${
                       approvalSubTab === t.key
                         ? 'bg-white text-[#e05300] shadow-sm border border-[#e0e0e0]'
                         : 'text-[#414844] hover:text-[#1b1c1c]'
@@ -1124,8 +1124,8 @@ function AdminDashboardContent() {
                             </p>
                           </div>
                           <div className="flex gap-2">
-                            <button onClick={() => declineSeller(s._id)} className="px-4 py-2 border border-red-200 bg-red-50 text-[9px] font-black uppercase tracking-widest text-red-600 hover:bg-red-100 rounded-lg transition">Decline</button>
-                            <button onClick={() => approveSeller(s._id)} className="px-5 py-2 bg-[#e05300] text-white text-[9px] font-black uppercase tracking-widest hover:bg-[#c24600] rounded-lg transition">✓ Approve</button>
+                            <button onClick={() => declineSeller(s._id)} className="px-4 py-2 border border-red-200 bg-red-50 text-[9px] font-black uppercase tracking-widest text-red-600 hover:bg-red-100 rounded-2xl transition">Decline</button>
+                            <button onClick={() => approveSeller(s._id)} className="px-5 py-2 bg-[#e05300] text-white text-[9px] font-black uppercase tracking-widest hover:bg-[#c24600] rounded-2xl transition">✓ Approve</button>
                           </div>
                         </div>
                         {/* Document grid */}
@@ -1163,8 +1163,8 @@ function AdminDashboardContent() {
                             </p>
                           </div>
                           <div className="flex gap-2">
-                            <button onClick={() => declineRider(r._id)} className="px-4 py-2 border border-red-200 bg-red-50 text-[9px] font-black uppercase tracking-widest text-red-600 hover:bg-red-100 rounded-lg transition">Decline</button>
-                            <button onClick={() => approveRider(r._id)} className="px-5 py-2 bg-[#e05300] text-white text-[9px] font-black uppercase tracking-widest hover:bg-[#c24600] rounded-lg transition">✓ Approve</button>
+                            <button onClick={() => declineRider(r._id)} className="px-4 py-2 border border-red-200 bg-red-50 text-[9px] font-black uppercase tracking-widest text-red-600 hover:bg-red-100 rounded-2xl transition">Decline</button>
+                            <button onClick={() => approveRider(r._id)} className="px-5 py-2 bg-[#e05300] text-white text-[9px] font-black uppercase tracking-widest hover:bg-[#c24600] rounded-2xl transition">✓ Approve</button>
                           </div>
                         </div>
                         {/* Document grid */}
@@ -1294,7 +1294,7 @@ function AdminDashboardContent() {
                   { label: 'Missing required', value: governanceReport?.totals?.missingRequired || 0 },
                   { label: 'Uncategorized', value: governanceReport?.totals?.uncategorized || 0 },
                 ].map(card => (
-                  <div key={card.label} className="rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+                  <div key={card.label} className="rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#5f7569]">{card.label}</p>
                     <p className="mt-2 text-3xl font-sans text-[#ff6b00]">{card.value}</p>
                   </div>
@@ -1302,7 +1302,7 @@ function AdminDashboardContent() {
               </div>
 
               <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                   <div className="mb-5 flex items-start justify-between gap-3">
                     <div>
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Taxonomy editor</p>
@@ -1346,7 +1346,7 @@ function AdminDashboardContent() {
                   </div>
                 </section>
 
-                <section className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Live taxonomy</p>
                     <h3 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Managed product categories</h3>
@@ -1369,7 +1369,7 @@ function AdminDashboardContent() {
                 </section>
               </div>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <div className="mb-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Attribute governance</p>
                   <h3 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Data cleanup queue</h3>
@@ -1380,7 +1380,7 @@ function AdminDashboardContent() {
                     ['Unknown attributes', governanceReport?.unknownAttributes || []],
                     ['Needs category backfill', governanceReport?.uncategorized || []],
                   ].map(([title, rows]: any) => (
-                    <div key={title} className="rounded-lg border border-[#edf1ee] bg-[#fcf9f8] p-4">
+                    <div key={title} className="rounded-2xl border border-[#edf1ee] bg-[#fcf9f8] p-4">
                       <p className="text-sm font-black text-[#1b1c1c]">{title}</p>
                       <div className="mt-3 max-h-72 space-y-2 overflow-y-auto">
                         {rows.length === 0 ? (
@@ -1408,7 +1408,7 @@ function AdminDashboardContent() {
                   { label: 'Missing required', value: governanceReport?.totals?.missingRequired || 0 },
                   { label: 'Uncategorized', value: governanceReport?.totals?.uncategorized || 0 },
                 ].map(card => (
-                  <div key={card.label} className="rounded-lg border border-[#dfe7e2] bg-white p-5 shadow-sm">
+                  <div key={card.label} className="rounded-2xl border border-[#dfe7e2] bg-white p-5 shadow-sm">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#5f7569]">{card.label}</p>
                     <p className="mt-2 text-3xl font-sans text-[#ff6b00]">{card.value}</p>
                   </div>
@@ -1416,7 +1416,7 @@ function AdminDashboardContent() {
               </div>
 
               <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-                <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                   <div className="mb-5 flex items-start justify-between gap-3">
                     <div>
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Taxonomy editor</p>
@@ -1460,7 +1460,7 @@ function AdminDashboardContent() {
                   </div>
                 </section>
 
-                <section className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+                <section className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
                   <div className="border-b border-[#dfe7e2] p-5">
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Live taxonomy</p>
                     <h3 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Managed product categories</h3>
@@ -1483,7 +1483,7 @@ function AdminDashboardContent() {
                 </section>
               </div>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <div className="mb-5">
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Attribute governance</p>
                   <h3 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Data cleanup queue</h3>
@@ -1494,7 +1494,7 @@ function AdminDashboardContent() {
                     ['Unknown attributes', governanceReport?.unknownAttributes || []],
                     ['Needs category backfill', governanceReport?.uncategorized || []],
                   ].map(([title, rows]: any) => (
-                    <div key={title} className="rounded-lg border border-[#edf1ee] bg-[#fcf9f8] p-4">
+                    <div key={title} className="rounded-2xl border border-[#edf1ee] bg-[#fcf9f8] p-4">
                       <p className="text-sm font-black text-[#1b1c1c]">{title}</p>
                       <div className="mt-3 max-h-72 space-y-2 overflow-y-auto">
                         {rows.length === 0 ? (
@@ -1515,7 +1515,7 @@ function AdminDashboardContent() {
 
           {activeTab === 'disputes' && (
             <div className="space-y-6 animate-reveal">
-              <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Buyer protection queue</p>
                   <h3 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Open Dispute Exposure</h3>
@@ -1530,7 +1530,7 @@ function AdminDashboardContent() {
                   { label: 'Decision', value: 'Instant refund, seller rebuttal, rider investigation', tone: 'bg-white' },
                   { label: 'Audit', value: 'Every admin action is retained with order history', tone: 'bg-white' },
                 ].map(card => (
-                  <div key={card.label} className={`rounded-lg border border-[#dfe7e2] ${card.tone} p-5`}>
+                  <div key={card.label} className={`rounded-2xl border border-[#dfe7e2] ${card.tone} p-5`}>
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">{card.label}</p>
                     <p className="mt-3 text-sm font-semibold leading-6 text-[#405046]">{card.value}</p>
                   </div>
@@ -1603,7 +1603,7 @@ function AdminDashboardContent() {
               </div>
 
               {isAddingMarket && (
-                <div className="bg-white border border-[#e0e0e0] rounded-lg p-8 shadow-xl">
+                <div className="bg-white border border-[#e0e0e0] rounded-2xl p-8 shadow-xl">
                   <form onSubmit={handleCreateMarket} className="space-y-6">
                     <h3 className="text-xl font-sans border-b border-[#e0e0e0] pb-4 mb-6">New Market Details</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1762,7 +1762,7 @@ function AdminDashboardContent() {
 
           {activeTab === 'fraud' && (
             <div className="space-y-5 animate-reveal">
-              <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Security operations</p>
                 <h2 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Fraud Alerts</h2>
                 <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-[#5f7569]">
@@ -1777,7 +1777,7 @@ function AdminDashboardContent() {
                   { label: 'Linked orders', value: Array.isArray(fraudAlerts) ? fraudAlerts.reduce((sum: number, f: any) => sum + (f.relatedOrders?.length || 0), 0) : 0 },
                   { label: 'Refund route', value: 'Disputes tab' },
                 ].map(item => (
-                  <div key={item.label} className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+                  <div key={item.label} className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                     <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#5f7569]">{item.label}</p>
                     <p className="mt-3 text-2xl font-sans text-[#1b1c1c]">{item.value}</p>
                   </div>
@@ -1851,7 +1851,7 @@ function AdminDashboardContent() {
 
           {activeTab === 'payouts' && (
             <div className="space-y-6 animate-reveal">
-              <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
                 <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">Liquidity Terminal</p>
                 <h2 className="mt-2 text-2xl font-sans text-[#1b1c1c]">Payout Approvals</h2>
                 <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-[#5f7569]">

@@ -308,7 +308,7 @@ export default function SettingsPage() {
   return (
     <Layout>
       <div className="mx-auto max-w-6xl space-y-6 pb-20">
-        <section className="overflow-hidden rounded-lg border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
+        <section className="overflow-hidden rounded-2xl border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#ffedd5]">
@@ -333,7 +333,7 @@ export default function SettingsPage() {
 
         <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px]">
           <main className="space-y-5">
-            <section className="rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-5">
+            <section className="rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-5">
               <div className="mb-4 flex items-center gap-3">
                 <Globe2 className="text-[#ff6b00]" size={20} />
                 <h2 className="text-xl font-black text-[#1b1c1c]">{t('language_and_money')}</h2>
@@ -366,7 +366,7 @@ export default function SettingsPage() {
               </div>
             </section>
 
-            <section className="rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-5">
+            <section className="rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-5">
               <div className="mb-4 flex items-center gap-3">
                 <Bell className="text-[#ff6b00]" size={20} />
                 <h2 className="text-xl font-black text-[#1b1c1c]">{t('notifications')}</h2>
@@ -384,7 +384,7 @@ export default function SettingsPage() {
               </div>
             </section>
 
-            <section className="rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-5">
+            <section className="rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-5">
               <div className="mb-4 flex items-center gap-3">
                 <LockKeyhole className="text-[#ff6b00]" size={20} />
                 <h2 className="text-xl font-black text-[#1b1c1c]">{t('privacy')}</h2>
@@ -406,7 +406,7 @@ export default function SettingsPage() {
             </section>
 
             {canUseSellerSettings && (
-              <section className="rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-5">
+              <section className="rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-5">
                 <div className="mb-4 flex items-center gap-3">
                   <MessageSquareText className="text-[#ff6b00]" size={20} />
                   <h2 className="text-xl font-black text-[#1b1c1c]">{t('seller_messaging')}</h2>
@@ -440,7 +440,7 @@ export default function SettingsPage() {
             )}
 
             {canUseSellerSettings && (
-              <section className="rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-5">
+              <section className="rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-5">
                 <div className="mb-4 flex items-center gap-3">
                   <ShieldCheck className="text-[#ff6b00]" size={20} />
                   <div>
@@ -462,7 +462,7 @@ export default function SettingsPage() {
           </main>
 
           <aside className="space-y-5">
-            <section className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+            <section className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
               <ShieldCheck className="text-[#ff6b00]" size={24} />
               <h2 className="mt-3 text-lg font-black text-[#1b1c1c]">{t('secure_by_default')}</h2>
               <p className="mt-2 text-sm font-semibold leading-6 text-[#5f7569]">
@@ -495,7 +495,7 @@ export default function SettingsPage() {
               )}
             </section>
 
-            <section className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+            <section className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
               <Mail className="text-[#ff6b00]" size={24} />
               <h2 className="mt-3 text-lg font-black text-[#1b1c1c]">{t('message_routing')}</h2>
               <p className="mt-2 text-sm font-semibold leading-6 text-[#5f7569]">
@@ -504,7 +504,7 @@ export default function SettingsPage() {
             </section>
 
             {canUseRiderSettings && (
-              <section className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+              <section className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
                 <h2 className="text-lg font-black text-[#1b1c1c]">{t('rider_preferences')}</h2>
                 <div className="mt-4 space-y-3">
                   <Toggle
@@ -529,7 +529,7 @@ export default function SettingsPage() {
             )}
 
             {canUseRiderSettings && (
-              <section className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+              <section className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
                 <h2 className="text-lg font-black text-[#1b1c1c]">Rider profile review</h2>
                 <p className="mt-2 text-sm font-semibold leading-6 text-[#5f7569]">Vehicle and document changes go to admin review before they replace your approved profile.</p>
                 <div className="mt-4 space-y-3">

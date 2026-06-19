@@ -75,7 +75,7 @@ export default function RiderDeliveriesPage() {
       <div className="mx-auto max-w-6xl space-y-6 animate-reveal pb-20">
         
         {/* ── Header ── */}
-        <div className="overflow-hidden rounded-lg border border-[#0b4b32]/20 bg-[#e05300] p-6 text-white shadow-sm md:p-8">
+        <div className="overflow-hidden rounded-2xl border border-[#0b4b32]/20 bg-[#e05300] p-6 text-white shadow-sm md:p-8">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <div className="mb-2 flex items-center gap-3">
@@ -104,19 +104,19 @@ export default function RiderDeliveriesPage() {
         {/* ── Stats Row ── */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="rounded-lg bg-white border border-[#e0e0e0] border-l-4 border-l-[#ea580c] p-5 group hover:shadow-md transition-all">
+          <div className="rounded-2xl bg-white border border-[#e0e0e0] border-l-4 border-l-[#ea580c] p-5 group hover:shadow-md transition-all">
             <p className="text-[9px] font-black text-[#414844] uppercase tracking-[0.14em] mb-4">Active Deliveries</p>
             <p className="text-3xl font-sans text-[#1b1c1c] tracking-normal">{stats.active}</p>
             <p className="text-[9px] text-[#ff6b00] font-black uppercase tracking-widest mt-2">In progress now</p>
           </div>
           
-          <div className="rounded-lg bg-white border border-[#e0e0e0] border-l-4 border-l-[#1b1c1c] p-5 group hover:shadow-md transition-all">
+          <div className="rounded-2xl bg-white border border-[#e0e0e0] border-l-4 border-l-[#1b1c1c] p-5 group hover:shadow-md transition-all">
             <p className="text-[9px] font-black text-[#414844] uppercase tracking-[0.14em] mb-4">Completed</p>
             <p className="text-3xl font-sans text-[#1b1c1c] tracking-normal">{stats.completed}</p>
             <p className="text-[9px] text-[#414844] font-black uppercase tracking-widest mt-2 opacity-50">Total deliveries</p>
           </div>
           
-          <div className="rounded-lg bg-[#e05300] p-5 group shadow-sm">
+          <div className="rounded-2xl bg-[#e05300] p-5 group shadow-sm">
             <p className="text-[9px] font-black text-[#ff6b00] uppercase tracking-[0.14em] mb-4">Total Earnings</p>
             <p className="text-3xl font-sans text-white tracking-normal">{stats.earnings.toLocaleString()}</p>
             <p className="text-[9px] text-white/40 font-black uppercase tracking-widest mt-2">RWF earned</p>
@@ -124,7 +124,7 @@ export default function RiderDeliveriesPage() {
         </div>
 
         {/* ── Filter & Search Bar ── */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 rounded-lg bg-white border border-[#e0e0e0] p-4 shadow-sm">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 rounded-2xl bg-white border border-[#e0e0e0] p-4 shadow-sm">
           <div className="flex gap-2 w-full md:w-auto">
             <button 
               onClick={() => setFilter('active')}
@@ -162,11 +162,11 @@ export default function RiderDeliveriesPage() {
         {loading ? (
           <div className="space-y-4">
             {[1, 2, 3].map(i => (
-              <div key={i} className="h-36 rounded-lg bg-white border border-[#e0e0e0] animate-pulse" />
+              <div key={i} className="h-36 rounded-2xl bg-white border border-[#e0e0e0] animate-pulse" />
             ))}
           </div>
         ) : filteredDeliveries.length === 0 ? (
-          <div className="rounded-lg py-24 flex flex-col items-center justify-center text-center bg-white border-2 border-dashed border-[#e0e0e0]">
+          <div className="rounded-2xl py-24 flex flex-col items-center justify-center text-center bg-white border-2 border-dashed border-[#e0e0e0]">
             <div className="mb-6 opacity-60 text-primary">
               <Bike size={56} strokeWidth={1.5} />
             </div>
@@ -183,7 +183,7 @@ export default function RiderDeliveriesPage() {
         ) : (
           <div className="space-y-6">
             {filteredDeliveries.map((delivery: any) => (
-              <div key={delivery._id} className="overflow-hidden rounded-lg bg-white border border-[#e0e0e0] group hover:border-[#ff6b00] transition-all shadow-sm">
+              <div key={delivery._id} className="overflow-hidden rounded-2xl bg-white border border-[#e0e0e0] group hover:border-[#ff6b00] transition-all shadow-sm">
                 <div className="flex flex-col md:flex-row">
                   
                   {/* Left: Meta Info */}

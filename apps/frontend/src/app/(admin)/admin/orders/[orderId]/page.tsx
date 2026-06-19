@@ -173,7 +173,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
       )}
 
       <div className="space-y-6 pb-20">
-        <section className="rounded-lg border border-[#dfe7e2] bg-white shadow-sm">
+        <section className="rounded-2xl border border-[#dfe7e2] bg-white shadow-sm">
           <div className="flex flex-col gap-6 border-b border-[#dfe7e2] bg-[#fcf9f8] p-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <Link href="/admin?tab=analytics" className="text-[10px] font-black uppercase tracking-[0.18em] text-[#ff6b00]">
@@ -227,9 +227,9 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
                   </button>
                 </div>
               </div>
-              <div className="max-h-[560px] space-y-4 overflow-y-auto rounded-lg border border-[#dfe7e2] bg-[#f7faf8] p-4">
+              <div className="max-h-[560px] space-y-4 overflow-y-auto rounded-2xl border border-[#dfe7e2] bg-[#f7faf8] p-4">
                 {visibleMessages.length ? visibleMessages.map((message, index) => (
-                  <div key={`${message.timestamp}-${index}`} className={`max-w-[86%] rounded-lg border bg-white p-4 shadow-sm ${message.senderRole === 'SELLER' || message.senderRole === 'RIDER' ? 'ml-auto border-[#ffd8bf]' : 'border-[#dfe7e2]'}`}>
+                  <div key={`${message.timestamp}-${index}`} className={`max-w-[86%] rounded-2xl border bg-white p-4 shadow-sm ${message.senderRole === 'SELLER' || message.senderRole === 'RIDER' ? 'ml-auto border-[#ffd8bf]' : 'border-[#dfe7e2]'}`}>
                     <div className="mb-2 flex items-center justify-between gap-3">
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#ff6b00]">
                         {message.senderRole}{message.recipientRole ? ` to ${message.recipientRole}` : ''}
@@ -254,7 +254,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
             </div>
 
             <aside className="space-y-5 p-6">
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                 <h2 className="text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Admin Quote Console</h2>
                 <p className="mt-2 text-xs font-semibold leading-relaxed text-[#5f7569]">
                   Send a seller-side quote without opening the receipt. The buyer sees it in the negotiation thread.
@@ -269,7 +269,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
                 {!isNegotiation && <p className="mt-3 text-xs font-bold text-[#9a6b5d]">Quote controls are active only during negotiation.</p>}
               </section>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-[#fcf9f8] p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-[#fcf9f8] p-5">
                 <h2 className="text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Financials</h2>
                 <div className="mt-4 space-y-3 text-sm">
                   {[
@@ -294,7 +294,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
                 </div>
               </section>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                 <h2 className="text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Parties</h2>
                 <div className="mt-4 space-y-4 text-sm">
                   <div>
@@ -315,7 +315,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
                 </div>
               </section>
 
-              <section className="rounded-lg border border-[#dfe7e2] bg-white p-5">
+              <section className="rounded-2xl border border-[#dfe7e2] bg-white p-5">
                 <h2 className="text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Process Evidence</h2>
                 <div className="mt-4 space-y-4">
                   {delivery?.pickup?.pickupPhotoUrl ? (
@@ -340,7 +340,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Items</h2>
             <div className="divide-y divide-[#edf1ee]">
               {products.length ? products.map((product, index) => (
@@ -358,7 +358,7 @@ export default function AdminOrderPage({ params }: { params: Promise<{ orderId: 
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#dfe7e2] bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-[#dfe7e2] bg-white p-6 shadow-sm">
             <h2 className="mb-4 text-sm font-black uppercase tracking-[0.16em] text-[#1b1c1c]">Status History</h2>
             <div className="space-y-4">
               {(order.statusHistory || []).map((item, index) => (

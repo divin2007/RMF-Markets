@@ -194,7 +194,7 @@ export default function RiderDashboardPage() {
             <p className="text-[10px] font-black text-[#ff6b00] uppercase tracking-[0.22em] mb-4">Rider Dashboard</p>
             <h1 className="text-3xl font-sans tracking-normal text-[#1b1c1c] leading-none">My Dashboard</h1>
           </div>
-          <div className="flex items-center gap-4 rounded-lg border border-[#e0e0e0] bg-white px-6 py-3 shadow-sm">
+          <div className="flex items-center gap-4 rounded-2xl border border-[#e0e0e0] bg-white px-6 py-3 shadow-sm">
             <div>
               <p className="text-[9px] font-black uppercase tracking-widest text-[#414844]/60">Availability</p>
               <p className={`text-[11px] font-black uppercase tracking-widest ${availability ? 'text-green-600' : 'text-[#7b3f3f]'}`}>
@@ -257,7 +257,7 @@ export default function RiderDashboardPage() {
             </div>
 
             {/* Available Mandates Matrix */}
-            <div className="bg-white border border-[#e0e0e0] rounded-lg shadow-lg">
+            <div className="bg-white border border-[#e0e0e0] rounded-2xl shadow-lg">
                <div className="px-8 py-6 bg-[#e05300] flex justify-between items-center">
                   <div className="flex items-center gap-4">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.14em] text-white">Available Deliveries</h3>

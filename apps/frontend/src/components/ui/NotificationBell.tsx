@@ -155,7 +155,7 @@ export const NotificationBell = ({ compact = false }: { compact?: boolean }) => 
       </button>
 
       {isOpen && (
-        <div className="fixed left-3 right-3 top-20 z-[100] overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-2xl animate-fade-in sm:absolute sm:left-auto sm:right-0 sm:top-auto sm:mt-3 sm:w-[22rem]">
+        <div className="fixed left-3 right-3 top-20 z-[100] overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-2xl animate-fade-in sm:absolute sm:left-auto sm:right-0 sm:top-auto sm:mt-3 sm:w-[22rem]">
           <div className="flex items-center justify-between border-b border-[#e0e0e0] bg-[#fcf9f8] p-5">
             <div>
               <h3 className="text-sm font-black text-[#1b1c1c]">{t('notif_title')}</h3>

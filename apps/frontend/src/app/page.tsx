@@ -18,6 +18,7 @@ import {
   Shirt,
   ShoppingCart,
   Star,
+  Store,
   Trophy,
   Users,
   Utensils,
@@ -189,52 +190,71 @@ const getDistanceKm = (fromLat: number, fromLng: number, coordinates?: [number, 
 };
 
 const CompactMarketCard = ({ market, index }: { market: Market; index: number }) => {
-  const { t } = useLanguage();
   const fallback = marketImages[index % marketImages.length];
   const [imageSrc, setImageSrc] = useState(marketImage(market, index));
-
+  const open = (() => {
+    if (!market.operatingHours?.open || !market.operatingHours?.close) return true;
+    const now = new Date();
+    const day = now.toLocaleDateString('en-US', { weekday: 'short' });
+    if (market.operatingHours.daysOpen?.length && !market.operatingHours.daysOpen.includes(day)) return false;
+    const toMin = (v: string) => { const [h, m] = v.split(':').map(Number); return h * 60 + (m || 0); };
+    const cur = now.getHours() * 60 + now.getMinutes();
+    return cur >= toMin(market.operatingHours.open) && cur <= toMin(market.operatingHours.close);
+  })();
   return (
-    <Link
-      href={marketHref(market)}
-      className="group block overflow-hidden rounded-lg border border-[#e2bfb0] bg-white transition-colors hover:border-[#a04100]"
-    >
-      <div className="relative h-32 overflow-hidden bg-background-surface sm:h-36">
+    <Link href={marketHref(market)} className="group relative block overflow-hidden rounded-3xl card-rest glow-hover">
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#120800]">
         <Image
           src={imageSrc}
           alt={market.name}
           fill
           unoptimized
-          sizes="(min-width: 1024px) 300px, 46vw"
-          className="object-cover transition duration-700 group-hover:scale-110"
+          sizes="(min-width:1024px) 360px, 50vw"
+          className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.07] group-hover:opacity-100"
           onError={() => setImageSrc(fallback)}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-sm bg-[#ff9f1c] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#221b00]">
-          <BadgeCheck size={12} className="text-accent-premium" />
-          Verified
-        </span>
-      </div>
-      <div className="space-y-3 p-3 sm:p-5">
-        <div>
-          <h3 className="line-clamp-1 text-base font-bold tracking-tight text-text-primary group-hover:text-primary transition-colors">{market.name}</h3>
-          <p className="mt-1 line-clamp-1 text-xs font-semibold text-text-secondary">
-            <span className="text-primary font-black">{marketSellerCount(market, index)}</span> Sellers · <span className="text-primary font-black">{marketProductCount(market, index).toLocaleString()}</span> Products
-          </p>
-          <p className="mt-2.5 flex items-center gap-1.5 text-[11px] font-medium text-text-secondary">
-            <MapPin size={13} className="text-primary/50" />
-            <span className="truncate max-w-[120px]">{marketLocation(market)}</span>
-            {market.distance !== undefined && market.distance !== Number.POSITIVE_INFINITY && (
-              <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[9px] font-black text-primary animate-reveal">
-                <MapPin size={10} className="shrink-0" />
-                {market.distance.toFixed(1)} km
-              </span>
-            )}
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ff6b00]/8 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/12 to-transparent transition-transform duration-[1000ms] group-hover:translate-x-[250%]" />
+
+        <div className="absolute left-4 top-4 right-4 flex items-start justify-between gap-2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#ff9f1c] px-3 py-1.5 font-mono text-[8px] font-bold uppercase tracking-[0.15em] text-[#1a0f00] shadow-lg">
+            <BadgeCheck size={9} />Verified
+          </span>
+          <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-mono text-[8px] font-bold uppercase tracking-[0.12em] shadow-lg backdrop-blur-md ${open ? 'bg-white text-[#1b1c1c]' : 'bg-black/70 text-white/80'}`}>
+            <span className={`h-1.5 w-1.5 rounded-full ${open ? 'animate-pulse bg-emerald-500' : 'bg-white/30'}`} />
+            {open ? 'Open' : 'Closed'}
+          </span>
         </div>
-        <div className="flex items-center justify-between pt-2 border-t border-border-light/50">
-          <span className="text-[12px] font-black text-primary tracking-wide transition-all duration-300">{t('markets_explore_button')}</span>
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-105">
-            <ArrowRight size={16} />
+
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <p className="font-mono text-[8px] font-bold uppercase tracking-[0.22em] text-[#ff9f1c]">
+            {market.type === 'individual' ? 'Independent shop' : 'Public market'}
+          </p>
+          <h3 className="mt-1.5 text-2xl font-black leading-tight tracking-tight text-white">
+            {market.name}
+          </h3>
+          <div className="mt-1 flex items-center gap-1 text-[11px] font-medium text-white/60">
+            <MapPin size={10} className="shrink-0 text-[#ff9f1c]" />
+            <span className="truncate">{marketLocation(market)}</span>
+          </div>
+          <div className="mt-4 flex items-end justify-between gap-3">
+            <div className="flex flex-wrap gap-1.5">
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/12 px-2.5 py-1 text-[9px] font-bold text-white backdrop-blur-sm">
+                <Store size={9} />{market.totalSellers || 0}
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/12 px-2.5 py-1 text-[9px] font-bold text-white backdrop-blur-sm">
+                <Package size={9} />{market.activeProducts || 0}
+              </span>
+              {market.rating && market.rating > 0 ? (
+                <span className="inline-flex items-center gap-0.5 rounded-full bg-[#ff9f1c]/85 px-2.5 py-1 text-[9px] font-bold text-[#1a0f00]">
+                  <Star size={8} className="fill-current" />{Number(market.rating).toFixed(1)}
+                </span>
+              ) : null}
+            </div>
+            <span className="orange-glow-btn flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white">
+              <ArrowRight size={16} />
+            </span>
           </div>
         </div>
       </div>
@@ -242,63 +262,64 @@ const CompactMarketCard = ({ market, index }: { market: Market; index: number })
   );
 };
 
+
 const CompactProductCard = ({ product }: { product: DisplayProduct }) => {
-  const { t } = useLanguage();
   return (
-    <Link
-      href={product.href}
-      className="group block overflow-hidden rounded-lg border border-[#e2bfb0] bg-white transition-colors hover:border-[#a04100]"
-    >
-      <div className="relative h-36 overflow-hidden bg-background-surface sm:h-44">
+    <Link href={product.href} className="group block overflow-hidden rounded-3xl bg-white card-rest glow-hover">
+      <div className="relative aspect-square overflow-hidden bg-[#f5f0eb]">
         <Image
           src={product.image}
           alt={product.name}
           fill
           unoptimized
-          sizes="(min-width: 1024px) 250px, 45vw"
-          className="object-cover transition duration-700 group-hover:scale-110"
+          sizes="(min-width:1024px) 260px, 45vw"
+          className="object-cover transition-all duration-700 group-hover:scale-[1.08] group-hover:brightness-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        {product.tag && (
-          <span className="absolute left-3 top-3 rounded-sm bg-[#ff9f1c] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#221b00]">
+        <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/22 to-transparent transition-transform duration-[800ms] group-hover:translate-x-[230%]" />
+        {product.tag ? (
+          <span className="absolute left-3 top-3 rounded-full bg-gradient-to-r from-[#ff6b00] to-[#ff9f1c] px-3 py-1.5 font-mono text-[8px] font-black uppercase tracking-[0.14em] text-white shadow-lg shadow-[#ff6b00]/30">
             {product.tag}
           </span>
-        )}
-        {product.madeInRwanda && !product.tag && (
-          <span className="absolute left-3 top-3 rounded-sm bg-[#ff6b00] px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-white">
-            {t('verified_partner')}
+        ) : product.madeInRwanda ? (
+          <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 font-mono text-[8px] font-black uppercase tracking-[0.14em] text-[#ff6b00] shadow-md backdrop-blur-sm">
+            🇷🇼 Rwanda
           </span>
-        )}
-        <div className="absolute bottom-4 right-4 translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary shadow-lg hover:bg-primary hover:text-white transition-colors">
-            <ShoppingCart size={16} />
+        ) : null}
+        <div className="absolute right-3 top-3 flex items-center gap-0.5 rounded-full bg-black/45 px-2.5 py-1.5 text-[10px] font-black text-white backdrop-blur-md">
+          <Star size={9} className="fill-[#ff9f1c] text-[#ff9f1c]" />{product.rating}
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="rounded-2xl bg-white/20 px-4 py-2.5 text-[10px] font-black uppercase tracking-widest text-white backdrop-blur-md">
+            Quick view
           </div>
         </div>
       </div>
-      <div className="p-3 sm:p-5">
-        <p className="line-clamp-2 text-sm font-bold tracking-tight text-text-primary transition-colors group-hover:text-primary sm:text-base">{product.name}</p>
-        <p className="mt-1 line-clamp-1 text-xs font-semibold text-text-muted">by {product.seller}</p>
-        <div className="mt-4 flex items-end justify-between gap-2 sm:mt-5">
+      <div className="p-4">
+        <p className="section-kicker text-[8px]">{product.category}</p>
+        <h3 className="mt-1.5 line-clamp-2 text-[14px] font-black leading-snug tracking-tight text-[#1b1c1c] transition-colors duration-200 group-hover:text-[#a04100]">
+          {product.name}
+        </h3>
+        <p className="mt-0.5 truncate text-[10px] font-medium text-[#8e7164]">by {product.seller}</p>
+        <div className="mt-3.5 flex items-center justify-between gap-2">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted/60">{product.category}</p>
-            <p className="mt-0.5 text-base font-bold text-text-primary sm:text-lg">{formatCurrency(product.price)}</p>
+            <p className="text-lg font-black leading-none tracking-tight text-[#ff6b00]">{formatCurrency(product.price)}</p>
           </div>
-          <div className="flex items-center gap-1 text-xs font-bold text-amber-800 bg-amber-500/10 px-2.5 py-0.5 rounded-full">
-            <Star size={12} className="fill-amber-600 text-amber-600" />
-            {product.rating}
-          </div>
+          <span className="orange-glow-btn inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-[9px] font-black uppercase tracking-[0.12em] text-white">
+            Shop <ArrowRight size={11} />
+          </span>
         </div>
       </div>
     </Link>
   );
 };
+
 
 const MiniFeaturedMarketCard = ({ market, index }: { market: Market; index: number }) => {
   const fallback = marketImages[index % marketImages.length];
   const [imageSrc, setImageSrc] = useState(marketImage(market, index));
 
   return (
-    <Link href={marketHref(market)} className="group flex items-center gap-3 rounded-lg border border-border-light/40 bg-background-surface/30 p-2.5 transition-all hover:bg-background-surface/80 hover:border-[#a04100]/30">
+    <Link href={marketHref(market)} className="group flex items-center gap-3 rounded-2xl border border-border-light/40 bg-background-surface/30 p-2.5 transition-all hover:bg-background-surface/80 hover:border-[#a04100]/30">
       <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md bg-background-surface">
         <Image
           src={imageSrc}
@@ -345,7 +366,7 @@ const LivePlatformStats = ({ compact = false, markets = [] }: { compact?: boolea
   ];
 
   return (
-    <section className="rounded-lg border border-[#e2bfb0] bg-white p-5 transition-colors hover:border-[#a04100]">
+    <section className="rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-5 transition-colors hover:border-[#a04100]">
       <div className="mb-4 flex items-center justify-between">
         <div>
           <h2 className="text-[13px] font-bold tracking-tight text-text-primary">{t('platform_pulse')}</h2>
@@ -360,7 +381,7 @@ const LivePlatformStats = ({ compact = false, markets = [] }: { compact?: boolea
         {stats.map((stat, idx) => (
           <div key={idx} className="flex items-center justify-between border-b border-border-light/40 pb-3 last:border-0 last:pb-0">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-background-surface transition-colors group-hover:bg-primary/5">
+              <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-background-surface transition-colors group-hover:bg-primary/5">
                 <stat.icon size={14} className={stat.color} />
               </div>
               <span className="text-xs font-bold text-text-secondary">{stat.label}</span>
@@ -376,7 +397,7 @@ const LivePlatformStats = ({ compact = false, markets = [] }: { compact?: boolea
 const MapPanel = ({ title, compact = false }: { title: string; compact?: boolean }) => {
   const { t } = useLanguage();
   return (
-    <section className="overflow-hidden rounded-lg border border-[#e2bfb0] bg-white transition-colors hover:border-[#a04100]">
+    <section className="overflow-hidden rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] transition-colors hover:border-[#a04100]">
       <div className="flex items-center justify-between border-b border-background-surface px-4 py-3">
         <div>
           <h2 className="text-[13px] font-bold tracking-tight text-text-primary">{title}</h2>
@@ -402,7 +423,7 @@ const MostBoughtPanel = ({
 }) => {
   const { t } = useLanguage();
   return (
-    <section className="animate-reveal rounded-lg bg-[#a04100] p-6 text-white">
+    <section className="animate-reveal rounded-2xl bg-[#a04100] p-6 text-white">
       <div className="mb-6 flex items-start justify-between gap-3">
         <div>
           <h2 className="text-xl font-bold leading-tight tracking-tight">{t('most_bought_today')}</h2>
@@ -416,7 +437,7 @@ const MostBoughtPanel = ({
             )}
           </div>
         </div>
-        <div className="rounded-lg bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 text-right shrink-0">
+        <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1.5 text-right shrink-0">
           <p className="text-[9px] font-bold uppercase tracking-widest text-white/40">{t('peak_hour')}</p>
           <p className="text-xs font-bold text-white">11:00 - 13:00</p>
         </div>
@@ -723,7 +744,7 @@ export default function HomePage() {
           <div className="grid min-w-0 grid-cols-1 gap-5 md:gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(340px,0.9fr)]">
             <main className="min-w-0 space-y-6 md:space-y-8">
               {/* Cinematic Hero Section */}
-              <section className="animate-reveal relative min-h-[320px] overflow-hidden border border-[#e2bfb0] bg-[#1b1c1c] lg:min-h-[400px]">
+              <section className="animate-reveal relative min-h-[440px] overflow-hidden rounded-3xl shadow-[0_12px_48px_-8px_rgba(27,28,28,0.22)] lg:min-h-[540px]">
                 <Image
                   src={heroImage}
                   alt="Fresh produce stalls at a local market"
@@ -769,7 +790,7 @@ export default function HomePage() {
                 <LivePlatformStats compact markets={liveMarkets} />
               </div>
 
-              <section className="animate-reveal [animation-delay:400ms] rounded-lg border border-[#e2bfb0] bg-white p-4 sm:p-6">
+              <section className="animate-reveal [animation-delay:400ms] rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-4 sm:p-6">
                 <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-primary/50">{t('pick_nearby_market')}</p>
                 <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
                   {chipLinks.map((chip, index) => {
@@ -792,13 +813,13 @@ export default function HomePage() {
               </section>
 
               {/* Flattened layout to give sections full breathability and prevent squashing */}
-              <section className="animate-reveal [animation-delay:600ms] rounded-lg border border-[#e2bfb0] bg-white p-4 sm:p-6 md:p-8">
+              <section className="animate-reveal [animation-delay:600ms] rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-4 sm:p-6 md:p-8">
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold tracking-tight text-text-primary sm:text-3xl">{t('rwandas_market_hubs')}</h2>
+                  <p className="section-kicker mb-2">Rwanda Markets</p><h2 className="section-title">{t('rwandas_market_hubs')}</h2>
                   <p className="mt-1.5 text-base font-medium text-text-muted">{t('choose_preferred_marketplace')}</p>
                 </div>
                 {displayMarkets.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-12 px-4 rounded-xl border border-dashed border-[#e2bfb0] bg-background-surface/50 text-center">
+                  <div className="flex flex-col items-center justify-center py-12 px-4 rounded-xl border border-dashed  bg-background-surface/50 text-center">
                     <MapPin className="h-10 w-10 text-primary/45" />
                     <h3 className="mt-4 text-base font-bold text-text-primary">No Active Market Hubs</h3>
                     <p className="mt-2 text-xs font-semibold text-text-secondary">Please check back later or start onboarding as a seller.</p>
@@ -813,10 +834,10 @@ export default function HomePage() {
               </section>
 
               {/* Spacious Trending Products Shelf */}
-              <section id="trending-products" className="animate-reveal [animation-delay:800ms] scroll-mt-24 rounded-lg border border-[#e2bfb0] bg-white p-4 sm:p-6 md:p-8">
+              <section id="trending-products" className="animate-reveal [animation-delay:800ms] scroll-mt-24 rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-4 sm:p-6 md:p-8">
                 <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <h2 className="text-2xl font-bold tracking-tight text-text-primary sm:text-3xl">{t('trending_products')}</h2>
+                    <p className="section-kicker mb-2">Trending Now</p><h2 className="section-title">{t('trending_products')}</h2>
                     <p className="mt-1.5 text-base font-medium text-text-muted">{t('most_popular_items')}</p>
                   </div>
                   {topProducts.length > 0 && (
@@ -827,21 +848,22 @@ export default function HomePage() {
                   )}
                 </div>
                 {topProducts.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-12 px-4 rounded-xl border border-dashed border-[#e2bfb0] bg-background-surface/50 text-center">
+                  <div className="flex flex-col items-center justify-center py-12 px-4 rounded-xl border border-dashed  bg-background-surface/50 text-center">
                     <Package className="h-10 w-10 text-primary/45" />
                     <h3 className="mt-4 text-base font-bold text-text-primary">No Trending Products Found</h3>
                     <p className="mt-2 text-xs font-semibold text-text-secondary">Sellers haven't listed any items today.</p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 gap-4 min-[430px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
+                  <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
                     {topProducts.slice(0, 4).map(product => (
                       <CompactProductCard key={product.id} product={product} />
                     ))}
                   </div>
                 )}
               </section>
-              {/* Made in Rwanda Brands Section */}
-              <section className="animate-reveal [animation-delay:900ms] rounded-lg border border-[#e2bfb0] bg-[#f5f3f3]/50 p-4 sm:p-6 md:p-8 relative overflow-hidden">
+
+              {/* Made in Rwanda Brands Section */}
+              <section className="animate-reveal [animation-delay:900ms] rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-[#f5f3f3]/50 p-4 sm:p-6 md:p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
                   <svg className="fill-primary" viewBox="0 0 100 100">
                     <path d="M50 0 L100 50 L50 100 L0 50 Z"></path>
@@ -857,11 +879,12 @@ export default function HomePage() {
                     <ArrowRight size={14} />
                   </Link>
                 </div>
-                                 {/* Compact category bubbles */}
+                
+                 {/* Compact category bubbles */}
                 <div className="grid grid-cols-2 min-[360px]:grid-cols-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 xl:flex xl:flex-wrap xl:justify-center gap-4 mb-8">
                   {dynamicBrandCategories.map((brand) => (
                     <Link href={`/markets?category=${brand.id}`} key={brand.id} className="group block text-center space-y-2 cursor-pointer">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white border border-[#e2bfb0] rounded-full flex items-center justify-center group-hover:bg-[#ffedd5]/20 group-hover:border-[#ff6b00] transition-all duration-300 shadow-sm relative overflow-hidden">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white rounded-full flex items-center justify-center transition-all duration-500 shadow-[0_4px_20px_-4px_rgba(27,28,28,0.10)] ring-2 ring-[#ffedd5] group-hover:ring-[#ff6b00] group-hover:shadow-[0_14px_36px_-6px_rgba(255,107,0,0.40)] group-hover:-translate-y-1.5 relative overflow-hidden">
                         <Image
                            src={brand.image}
                            alt={`${brand.label} brand preview`}
@@ -879,7 +902,7 @@ export default function HomePage() {
 
                 {/* Dynamic Made in Rwanda product shelf */}
                 {madeInRwandaProducts.length > 0 && (
-                  <div className="border-t border-[#e2bfb0]/40 pt-6">
+                  <div className="border-t /40 pt-6">
                     <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-[#a04100]">{t('featured_local_products') || 'Featured Local Products'}</p>
                     <div className="grid grid-cols-1 gap-4 min-[430px]:grid-cols-2 sm:grid-cols-4">
                       {madeInRwandaProducts.slice(0, 4).map(product => (
@@ -893,7 +916,7 @@ export default function HomePage() {
  
             <aside className="min-w-0 space-y-5 md:space-y-6">
               {/* Market Stories Section */}
-              <section className="animate-reveal [animation-delay:950ms] rounded-lg border border-[#e2bfb0] bg-white p-6">
+              <section className="animate-reveal [animation-delay:950ms] rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-6">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
                     <h2 className="text-2xl font-bold tracking-tight text-text-primary">{t('market_stories') || 'Market Stories'}</h2>
@@ -934,7 +957,7 @@ export default function HomePage() {
                   </div>
                 )}
 
-                <Link href="/videos" className="relative block aspect-[16/10] rounded-xl overflow-hidden shadow-sm group border border-[#e2bfb0] bg-background-surface">
+                <Link href="/videos" className="relative block aspect-[16/10] rounded-xl overflow-hidden shadow-sm group shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-background-surface">
                   <Image
                     src={activeVideo ? activeVideo.thumbnailUrl || activeVideo.videoUrl || "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400" : "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=400"}
                     alt={activeVideo ? activeVideo.title : "Market story preview"}
@@ -957,7 +980,7 @@ export default function HomePage() {
                 </Link>
               </section>
  
-              <section className="animate-reveal [animation-delay:1000ms] rounded-lg border border-[#e2bfb0] bg-white p-6">
+              <section className="animate-reveal [animation-delay:1000ms] rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-6">
                 <div className="mb-6 flex items-center justify-between">
                   <div>
                     <h2 className="text-2xl font-bold tracking-tight text-text-primary">{t('featured_markets')}</h2>
@@ -985,7 +1008,7 @@ export default function HomePage() {
                 <MostBoughtPanel products={topProducts} market={selectedMarket} />
               )}
 
-              <section className="animate-reveal [animation-delay:1200ms] rounded-lg border border-[#e2bfb0] bg-white p-4">
+              <section className="animate-reveal [animation-delay:1200ms] rounded-3xl bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.06)] p-4">
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     [t('verified_vendors'), BadgeCheck, 'text-[#ff9f1c] bg-[#ff9f1c]/10'],
@@ -995,7 +1018,7 @@ export default function HomePage() {
                   ].map(([label, Icon, colorClass]) => {
                     const TrustIcon = Icon as typeof BadgeCheck;
                     return (
-                      <div key={label as string} className="flex items-center gap-2 rounded-lg bg-background-surface/40 p-2 border border-border-light/20 transition-all hover:bg-white hover:shadow-sm">
+                      <div key={label as string} className="flex items-center gap-2 rounded-2xl bg-background-surface/40 p-2 border border-border-light/20 transition-all hover:bg-white hover:shadow-sm">
                         <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${colorClass}`}>
                           <TrustIcon size={14} />
                         </div>

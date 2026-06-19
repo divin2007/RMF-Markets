@@ -107,11 +107,11 @@ export default function SellerInventoryPage() {
               <p className="mt-2 text-sm font-semibold text-[#414844]">Adjust stock levels and keep an eye on low-stock products.</p>
             </div>
             <div className="flex gap-4">
-              <div className="rounded-lg border border-[#e0e0e0] bg-white px-5 py-3 text-center shadow-sm">
+              <div className="rounded-2xl border border-[#e0e0e0] bg-white px-5 py-3 text-center shadow-sm">
                 <p className="text-[9px] font-black uppercase tracking-widest text-[#414844]/60">Products</p>
                 <p className="text-2xl font-sans text-[#1b1c1c]">{list.length}</p>
               </div>
-              <div className={`rounded-lg border px-5 py-3 text-center shadow-sm ${lowCount > 0 ? 'border-[#e05300]/40 bg-[#fff5f0]' : 'border-[#e0e0e0] bg-white'}`}>
+              <div className={`rounded-2xl border px-5 py-3 text-center shadow-sm ${lowCount > 0 ? 'border-[#e05300]/40 bg-[#fff5f0]' : 'border-[#e0e0e0] bg-white'}`}>
                 <p className="text-[9px] font-black uppercase tracking-widest text-[#e05300]">Low stock</p>
                 <p className="text-2xl font-sans text-[#e05300]">{lowCount}</p>
               </div>
@@ -120,7 +120,7 @@ export default function SellerInventoryPage() {
         </div>
 
         {/* Controls */}
-        <div className="flex flex-col gap-3 rounded-lg border border-[#e0e0e0] bg-white p-4 shadow-sm md:flex-row md:items-center">
+        <div className="flex flex-col gap-3 rounded-2xl border border-[#e0e0e0] bg-white p-4 shadow-sm md:flex-row md:items-center">
           <div className="relative flex-1">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8b938d]" size={16} />
             <input
@@ -144,7 +144,7 @@ export default function SellerInventoryPage() {
         </div>
 
         {/* Table */}
-        <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left">
               <thead>

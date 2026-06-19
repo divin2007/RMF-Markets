@@ -95,7 +95,7 @@ export default function SellerBulkUploadPage() {
         {/* Steps */}
         <div className="grid gap-4 sm:grid-cols-3">
           {steps.map(s => (
-            <div key={s.n} className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+            <div key={s.n} className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#ffedd5] text-sm font-black text-[#e05300]">{s.n}</div>
               <p className="mt-3 text-sm font-black text-[#1b1c1c]">{s.title}</p>
               <p className="mt-1 text-xs font-semibold leading-5 text-[#5f7569]">{s.desc}</p>
@@ -104,7 +104,7 @@ export default function SellerBulkUploadPage() {
         </div>
 
         {/* Step 1: template */}
-        <section className="flex flex-col items-start justify-between gap-4 rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-6 shadow-sm sm:flex-row sm:items-center">
+        <section className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-6 shadow-sm sm:flex-row sm:items-center">
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-md bg-white text-[#ff6b00] shadow-sm">
               <FileSpreadsheet size={22} />
@@ -127,7 +127,7 @@ export default function SellerBulkUploadPage() {
 
         {/* Step 2: upload / result */}
         {result ? (
-          <section className="space-y-6 rounded-lg border border-[#e0e0e0] bg-white p-6 shadow-sm">
+          <section className="space-y-6 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
             <div className="flex items-center gap-3 text-lg font-black text-[#1b1c1c]">
               {result.failed === 0 ? <CheckCircle2 className="text-[#80c29a]" size={22} /> : <AlertCircle className="text-red-500" size={22} />}
               Import complete
@@ -176,9 +176,9 @@ export default function SellerBulkUploadPage() {
             </div>
           </section>
         ) : (
-          <form onSubmit={handleUpload} className="space-y-5 rounded-lg border border-[#e0e0e0] bg-white p-6 shadow-sm">
+          <form onSubmit={handleUpload} className="space-y-5 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
             <p className="text-sm font-black text-[#1b1c1c]">Step 2 — Upload your filled file</p>
-            <div className="group relative rounded-lg border-2 border-dashed border-[#b8c7be]/60 bg-[#f7faf8] p-12 text-center transition hover:border-[#ff6b00]">
+            <div className="group relative rounded-2xl border-2 border-dashed border-[#b8c7be]/60 bg-[#f7faf8] p-12 text-center transition hover:border-[#ff6b00]">
               <input
                 type="file"
                 accept=".csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

@@ -295,12 +295,12 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
     <Layout>
       <div className="mx-auto max-w-[1280px] px-4 py-6 md:px-8 md:py-10 space-y-10 pb-24">
         {/* Cover Hero Section */}
-        <section className="relative h-[300px] w-full overflow-hidden rounded-xl border border-[#e2bfb0] shadow-md">
+        <section className="relative h-[300px] w-full overflow-hidden rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] shadow-md">
           <img src={imageUrl} className="w-full h-full object-cover" alt={market.name} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full px-8 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="flex gap-4 items-center">
-              <div className="w-20 h-20 bg-white p-1.5 rounded-lg border border-[#e2bfb0] shadow-lg shrink-0">
+              <div className="w-20 h-20 bg-white p-1.5 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] shadow-lg shrink-0">
                 <img alt="Market Logo" className="w-full h-full object-cover rounded" src={logoUrl} />
               </div>
               <div className="text-white">
@@ -333,8 +333,8 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
         </section>
 
         {adVideo && (
-          <section className="grid gap-4 rounded-xl border border-[#e2bfb0] bg-white p-4 shadow-sm md:grid-cols-[0.85fr_1.15fr] md:p-5">
-            <div className="overflow-hidden rounded-lg bg-[#111815]">
+          <section className="grid gap-4 rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-4 shadow-sm md:grid-cols-[0.85fr_1.15fr] md:p-5">
+            <div className="overflow-hidden rounded-2xl bg-[#111815]">
               <video
                 src={resolveUploadUrl(adVideo.videoUrl, 'product', '/seller-videos/upload')}
                 poster={adVideo.thumbnailUrl || adVideo.productId?.images?.[0] ? resolveUploadUrl(adVideo.thumbnailUrl || adVideo.productId?.images?.[0], 'product') : imageUrl}
@@ -358,7 +358,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
         )}
 
         {/* Tab Selection Tab-Bar */}
-        <div className="flex border-b border-[#e2bfb0] pb-px overflow-x-auto gap-8 text-xs font-bold uppercase tracking-wider scrollbar-hide pt-4">
+        <div className="flex border-b  pb-px overflow-x-auto gap-8 text-xs font-bold uppercase tracking-wider scrollbar-hide pt-4">
           {[
             { id: 'shop', label: 'Shop Products', count: filteredProducts.length },
             { id: 'videos', label: 'Seller Videos' },
@@ -396,7 +396,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
             {/* Left sidebar filters */}
             <aside className="lg:col-span-3 space-y-6">
-              <div className="bg-white border border-[#e2bfb0] p-5 rounded-lg shadow-sm">
+              <div className="bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] p-5 rounded-2xl shadow-sm">
                 <h3 className="font-bold text-sm mb-4 flex items-center gap-2 uppercase tracking-wider text-text-primary">
                   <SlidersHorizontal size={16} className="text-primary" /> Filters
                 </h3>
@@ -471,7 +471,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
               </div>
 
               {/* Verified Trust badge */}
-              <div className="bg-tertiary-container/5 border border-tertiary border-dashed p-5 rounded-lg flex items-start gap-3">
+              <div className="bg-tertiary-container/5 border border-tertiary border-dashed p-5 rounded-2xl flex items-start gap-3">
                 <ShieldCheck size={20} className="text-tertiary shrink-0 mt-0.5" />
                 <div>
                   <p className="text-xs font-bold text-tertiary font-mono uppercase">Secure Marketplace</p>
@@ -483,7 +483,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
             {/* Main content shelf */}
             <div className="lg:col-span-9 space-y-8">
               {/* Seller Stories snap-rail */}
-              <section className="bg-white border border-[#e2bfb0] p-6 rounded-lg shadow-sm">
+              <section className="bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] p-6 rounded-2xl shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-bold text-sm uppercase tracking-wider text-text-primary">Market Stories</h3>
                   <Link href={`/videos?marketId=${market._id}`} className="text-xs font-bold text-primary hover:underline">View All</Link>
@@ -491,7 +491,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                 {marketStories.length > 0 ? (
                   <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                     {marketStories.map((story) => (
-                      <Link href={`/videos?story=${story._id}`} key={story._id} className="flex-shrink-0 w-36 h-52 relative rounded-xl overflow-hidden group cursor-pointer border border-[#e2bfb0] shadow-sm bg-[#111815]">
+                      <Link href={`/videos?story=${story._id}`} key={story._id} className="flex-shrink-0 w-36 h-52 relative rounded-xl overflow-hidden group cursor-pointer shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] shadow-sm bg-[#111815]">
                         <video
                           src={resolveUploadUrl(story.videoUrl, 'product', '/seller-videos/upload')}
                           poster={story.thumbnailUrl ? resolveUploadUrl(story.thumbnailUrl, 'product') : imageUrl}
@@ -509,7 +509,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                     ))}
                   </div>
                 ) : (
-                  <div className="rounded-lg border border-dashed border-[#e2bfb0] bg-background-surface p-6 text-center">
+                  <div className="rounded-2xl border border-dashed  bg-background-surface p-6 text-center">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted">No live stories yet</p>
                   </div>
                 )}
@@ -524,7 +524,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
               )}
 
               {/* Product Shelf Grid */}
-              <section className="bg-white border border-[#e2bfb0] p-6 rounded-lg shadow-sm">
+              <section className="bg-white shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] p-6 rounded-2xl shadow-sm">
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-border-light">
                   <h3 className="font-bold text-sm uppercase tracking-wider text-text-primary">
                     {selectedCategory === 'all' ? 'All Products' : facets?.categories?.find((category: any) => category.id === selectedCategory)?.label || selectedCategory}
@@ -534,7 +534,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
 
                 {loading ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[1, 2, 3, 4, 5, 6].map(i => <div key={i} className="h-72 animate-pulse rounded-xl border border-[#e2bfb0] bg-background-surface" />)}
+                    {[1, 2, 3, 4, 5, 6].map(i => <div key={i} className="h-72 animate-pulse rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-background-surface" />)}
                   </div>
                 ) : filteredProducts.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -543,7 +543,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                     ))}
                   </div>
                 ) : (
-                  <div className="rounded-xl border border-dashed border-[#e2bfb0] bg-background-surface p-12 text-center">
+                  <div className="rounded-xl border border-dashed  bg-background-surface p-12 text-center">
                     <p className="text-xs font-bold uppercase tracking-widest text-primary">No items found</p>
                     <h3 className="mt-4 text-xl font-bold text-text-primary">Try adjusting your filters or search query.</h3>
                   </div>
@@ -551,12 +551,12 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
               </section>
 
               {/* Top Rated Sellers Carousel */}
-              <section className="bg-[#f5f3f3]/50 border border-[#e2bfb0] p-6 rounded-lg shadow-sm">
+              <section className="bg-[#f5f3f3]/50 shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] p-6 rounded-2xl shadow-sm">
                 <h3 className="font-bold text-sm uppercase tracking-wider text-text-primary mb-4">Top Rated Sellers</h3>
                 {topSellers.length > 0 ? (
                   <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                   {topSellers.map((seller) => (
-                    <div key={seller.id} className="flex-shrink-0 w-56 bg-white p-4 rounded-lg border border-[#e2bfb0] flex flex-col items-center text-center shadow-sm">
+                    <div key={seller.id} className="flex-shrink-0 w-56 bg-white p-4 rounded-2xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] flex flex-col items-center text-center shadow-sm">
                       <div className="w-16 h-16 rounded-full overflow-hidden mb-3 border-2 border-primary relative">
                         {seller.image ? (
                           <img alt="Seller Avatar" className="w-full h-full object-cover" src={resolveUploadUrl(seller.image, 'product')} />
@@ -579,7 +579,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                   ))}
                   </div>
                 ) : (
-                  <div className="rounded-lg border border-dashed border-[#e2bfb0] bg-white p-6 text-center">
+                  <div className="rounded-2xl border border-dashed  bg-white p-6 text-center">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-text-muted">Seller activity will appear as products are listed.</p>
                   </div>
                 )}
@@ -604,7 +604,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
           <section className="animate-reveal [animation-delay:200ms] grid gap-8 lg:grid-cols-[1.4fr_0.6fr]">
             {/* Story & Background */}
             <div className="space-y-8">
-              <div className="rounded-xl border border-[#e2bfb0] bg-white p-8 shadow-sm space-y-6">
+              <div className="rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-8 shadow-sm space-y-6">
                 <h3 className="text-xl font-bold tracking-tight text-text-primary flex items-center gap-2.5">
                   <span className="w-1.5 h-5 bg-primary rounded-full animate-pulse"></span>
                   Welcome to {market.name}
@@ -612,7 +612,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                 <p className="text-sm md:text-base leading-relaxed text-text-secondary">
                   {market.description || 'This market is one of Rwanda\'s verified local trading hubs, connecting local merchants directly with you.'}
                 </p>
-                <div className="rounded-lg bg-background-surface/50 border border-[#e2bfb0]/40 p-5 space-y-3">
+                <div className="rounded-2xl bg-background-surface/50 shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)]/40 p-5 space-y-3">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Heritage & Community Impact</p>
                   <p className="text-xs leading-relaxed text-text-muted font-normal">
                     Every purchase you make directly supports local sellers, artisan families, and agricultural cooperatives based in the {market.name} district. By shopping here, you help sustain traditional craftsmanship, organic agriculture, and local economic resilience.
@@ -621,7 +621,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
               </div>
 
               {/* Buyer Guidelines Card */}
-              <div className="rounded-xl border border-[#e2bfb0] bg-white p-8 shadow-sm space-y-6">
+              <div className="rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-8 shadow-sm space-y-6">
                 <h3 className="text-xl font-bold tracking-tight text-text-primary">Shopping & Delivery Guidelines</h3>
                 <div className="grid gap-6 sm:grid-cols-2">
                   {[
@@ -646,7 +646,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
             <div className="space-y-6">
               
               {/* Quick Facts Card */}
-              <div className="rounded-xl border border-[#e2bfb0] bg-white p-6 shadow-sm space-y-6">
+              <div className="rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-6 shadow-sm space-y-6">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-text-primary border-b border-[#ebdcd0] pb-4">Operational Facts</h4>
                 <div className="space-y-4">
                   {[
@@ -665,7 +665,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
               </div>
 
               {/* Map Preview Widget */}
-              <div className="rounded-xl border border-[#e2bfb0] bg-white overflow-hidden shadow-sm">
+              <div className="rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white overflow-hidden shadow-sm">
                 <div className="p-6 border-b border-[#ebdcd0]">
                   <h4 className="text-xs font-bold uppercase tracking-widest text-text-primary">District Location</h4>
                 </div>
@@ -686,7 +686,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
         {/* Tab Panel reviews */}
         {activeTab === 'reviews' && (
           <section className="animate-reveal [animation-delay:200ms] space-y-6">
-            <div className="rounded-xl border border-[#e2bfb0] bg-white p-8 shadow-sm space-y-6">
+            <div className="rounded-xl shadow-[0_2px_20px_-4px_rgba(27,28,28,0.08)] bg-white p-8 shadow-sm space-y-6">
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#ebdcd0]">
                 <div>
                   <h2 className="text-xl font-bold tracking-tight text-text-primary">Market Reviews & Feedback</h2>
@@ -723,7 +723,7 @@ export default function MarketPage({ params }: { params: Promise<{ slug: string 
                   </div>
                 </div>
               ) : (
-                <div className="rounded-xl border border-dashed border-[#e2bfb0] bg-background-surface p-12 text-center">
+                <div className="rounded-xl border border-dashed  bg-background-surface p-12 text-center">
                   <p className="text-xs font-bold uppercase tracking-widest text-primary">No reviews yet</p>
                   <h3 className="mt-4 text-xl font-bold text-text-primary">Reviews will appear here after completed orders.</h3>
                 </div>

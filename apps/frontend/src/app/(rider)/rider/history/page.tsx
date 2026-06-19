@@ -61,18 +61,18 @@ export default function RiderHistoryPage() {
 
         {/* Summary */}
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#414844]/60">Completed deliveries</p>
             <p className="mt-2 text-3xl font-sans text-[#1b1c1c]">{filtered.length}</p>
           </div>
-          <div className="rounded-lg border border-[#e0e0e0] bg-[#e05300] p-5 shadow-sm">
+          <div className="rounded-2xl border border-[#e0e0e0] bg-[#e05300] p-5 shadow-sm">
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#ffedd5]">Total earnings (shown)</p>
             <p className="mt-2 text-3xl font-sans text-white">{totalEarnings.toLocaleString()} <span className="text-sm text-white/50">RWF</span></p>
           </div>
         </div>
 
         {/* Date filter */}
-        <div className="rounded-lg border border-[#e0e0e0] bg-white p-5 shadow-sm">
+        <div className="rounded-2xl border border-[#e0e0e0] bg-white p-5 shadow-sm">
           <div className="mb-4 flex items-center gap-2">
             <Filter size={16} className="text-[#ff6b00]" />
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1b1c1c]">Filter by date</p>
@@ -97,10 +97,10 @@ export default function RiderHistoryPage() {
         {/* List */}
         {loading ? (
           <div className="space-y-4">
-            {[1, 2, 3].map(i => <div key={i} className="h-28 animate-pulse rounded-lg border border-[#e0e0e0] bg-white" />)}
+            {[1, 2, 3].map(i => <div key={i} className="h-28 animate-pulse rounded-2xl border border-[#e0e0e0] bg-white" />)}
           </div>
         ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
+          <div className="flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#e0e0e0] bg-white px-4 py-20 text-center">
             <PackageCheck className="mb-4 text-[#ff6b00]/50" size={44} />
             <p className="text-sm font-black uppercase tracking-[0.2em] text-[#5f7569]">
               {list.length === 0 ? 'No completed deliveries yet' : 'No deliveries in this date range'}
@@ -109,7 +109,7 @@ export default function RiderHistoryPage() {
         ) : (
           <div className="space-y-4">
             {filtered.map(d => (
-              <div key={d._id} className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm transition hover:border-[#ff6b00]">
+              <div key={d._id} className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm transition hover:border-[#ff6b00]">
                 <div className="flex flex-col md:flex-row">
                   <div className="border-b border-[#e0e0e0] bg-[#fcf9f8]/60 p-5 md:w-56 md:border-b-0 md:border-r">
                     <span className="inline-block rounded-sm border border-green-300 bg-green-100 px-2.5 py-1 text-[8px] font-black uppercase tracking-widest text-green-800">Delivered</span>

@@ -153,12 +153,12 @@ export default function CartPage() {
                                 {item.name}
                               </h5>
                               {item.variantTitle && (
-                                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-lg text-[9px] font-black uppercase tracking-widest text-primary bg-[#ffedd5] border border-[#ff6b00]/10">
+                                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-2xl text-[9px] font-black uppercase tracking-widest text-primary bg-[#ffedd5] border border-[#ff6b00]/10">
                                   <Tag size={8} /> {item.variantTitle}
                                 </span>
                               )}
                               {item.customization && (
-                                <p className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-100 mt-1 inline-block">
+                                <p className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-2xl border border-emerald-100 mt-1 inline-block">
                                   ✏️ Custom: <span className="font-semibold text-emerald-800">{item.customization}</span>
                                 </p>
                               )}

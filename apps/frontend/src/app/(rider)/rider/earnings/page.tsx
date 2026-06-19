@@ -140,7 +140,7 @@ export default function RiderEarningsPage() {
 
             <form onSubmit={handlePayoutRequest} className="flex min-h-0 flex-1 flex-col">
               <div className="rmf-modal-body grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-                <div className="rounded-lg border border-primary/20 bg-primary/5 p-6">
+                <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
                   <p className="text-xs font-black uppercase tracking-wider text-text-secondary">Available to withdraw</p>
                   <p className="mt-3 text-4xl font-bold text-primary">{(wallet?.balance || 0).toLocaleString()} RWF</p>
                   <p className="mt-4 text-sm font-semibold leading-6 text-text-secondary">
@@ -203,10 +203,10 @@ export default function RiderEarningsPage() {
             </div>
           </div>
           <nav className="space-y-2">
-            <Link href="/rider/dashboard" className="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-lg">
+            <Link href="/rider/dashboard" className="flex items-center gap-2 px-4 py-2 text-text-secondary hover:bg-background-surface hover:text-text-primary font-medium rounded-2xl">
               <Map size={16} /> Live Tasks
             </Link>
-            <Link href="/rider/earnings" className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary font-bold rounded-lg">
+            <Link href="/rider/earnings" className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary font-bold rounded-2xl">
               <DollarSign size={16} /> {t('rider_earnings')}
             </Link>
           </nav>

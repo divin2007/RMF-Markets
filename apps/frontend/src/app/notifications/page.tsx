@@ -113,7 +113,7 @@ export default function NotificationsPage() {
     <Layout>
       <div className="mx-auto max-w-4xl space-y-6 animate-reveal pb-20">
         {/* Header */}
-        <section className="overflow-hidden rounded-lg border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
+        <section className="overflow-hidden rounded-2xl border border-[#d8ded9] bg-[#e05300] p-6 text-white shadow-sm md:p-8">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[#ffedd5]">
@@ -138,7 +138,7 @@ export default function NotificationsPage() {
         </section>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-2 rounded-lg border border-[#e0e0e0] bg-white p-3 shadow-sm">
+        <div className="flex flex-wrap gap-2 rounded-2xl border border-[#e0e0e0] bg-white p-3 shadow-sm">
           {filters.map(f => (
             <button
               key={f.key}
@@ -156,7 +156,7 @@ export default function NotificationsPage() {
         </div>
 
         {/* List */}
-        <section className="overflow-hidden rounded-lg border border-[#e0e0e0] bg-white shadow-sm">
+        <section className="overflow-hidden rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
           {loading ? (
             <div className="divide-y divide-[#f0eded]">
               {[1, 2, 3, 4].map(i => (

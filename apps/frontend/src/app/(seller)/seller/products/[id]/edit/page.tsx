@@ -205,7 +205,7 @@ export default function EditProductPage() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-10 rounded-lg border border-[#e0e0e0] bg-white p-6 shadow-sm md:p-10">
+        <form onSubmit={handleSubmit} className="space-y-10 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm md:p-10">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
             <div className="space-y-8">
               <div className="space-y-3">
@@ -237,7 +237,7 @@ export default function EditProductPage() {
                 <label className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1b1c1c]/40">Product photos</label>
                 <div className="grid grid-cols-2 gap-4">
                   {form.images.map((img, i) => (
-                    <div key={i} className="group relative aspect-square overflow-hidden rounded-lg border border-[#e0e0e0]">
+                    <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl border border-[#e0e0e0]">
                       <img src={resolveUploadUrl(img, 'product')} alt={`Product ${i + 1}`} className="h-full w-full object-cover" />
                       <button
                         type="button"
@@ -257,7 +257,7 @@ export default function EditProductPage() {
               </div>
             </div>
 
-            <div className="space-y-8 rounded-lg border border-[#e0e0e0] bg-[#fcf9f8] p-6">
+            <div className="space-y-8 rounded-2xl border border-[#e0e0e0] bg-[#fcf9f8] p-6">
               <div className="space-y-3">
                 <label className="text-[10px] font-black uppercase tracking-[0.3em] text-[#1b1c1c]/40">Price (RWF)</label>
                 <input
@@ -373,7 +373,7 @@ export default function EditProductPage() {
       {/* Delete confirmation modal */}
       {showDeleteModal && (
         <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-[#1b1c1c]/70 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-md rounded-lg border border-[#e0e0e0] bg-white p-8 shadow-2xl animate-reveal">
+          <div className="w-full max-w-md rounded-2xl border border-[#e0e0e0] bg-white p-8 shadow-2xl animate-reveal">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-[#fff5f3] text-[#7b3f3f]">
               <AlertTriangle size={22} />
             </div>

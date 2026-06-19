@@ -163,7 +163,7 @@ function RegisterContent() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 rounded-lg border border-[#d9e0db] bg-white p-5 shadow-sm md:p-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 rounded-2xl border border-[#d9e0db] bg-white p-5 shadow-sm md:p-6">
             <div className="space-y-3">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#1b1c1c]">{t('i_want_to_be')}</p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">

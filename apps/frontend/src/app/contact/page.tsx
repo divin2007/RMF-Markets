@@ -84,7 +84,7 @@ export default function ContactPage() {
             
             {/* Email Channel */}
             <div className="glass-card p-6 space-y-4 shadow-sm">
-              <div className="inline-flex p-3 rounded-lg bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
                 <Mail size={24} />
               </div>
               <div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
             {/* Phone Channel */}
             <div className="glass-card p-6 space-y-4 shadow-sm">
-              <div className="inline-flex p-3 rounded-lg bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
                 <Phone size={24} />
               </div>
               <div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
             {/* Office Location */}
             <div className="glass-card p-6 space-y-4 shadow-sm">
-              <div className="inline-flex p-3 rounded-lg bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
+              <div className="inline-flex p-3 rounded-2xl bg-[var(--rmf-green-light)] text-[var(--rmf-green)]">
                 <MapPin size={24} />
               </div>
               <div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
               <div className="absolute right-[-20px] bottom-[-20px] opacity-10 pointer-events-none">
                 <ShieldAlert size={140} />
               </div>
-              <div className="inline-flex p-3 rounded-lg bg-white/20 text-white">
+              <div className="inline-flex p-3 rounded-2xl bg-white/20 text-white">
                 <ShieldAlert size={24} />
               </div>
               <div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   If you have an order issue or delivery dispute, raise it through your orders tab within 24 hours of delivery.
                 </p>
               </div>
-              <Link href="/orders" className="inline-flex items-center justify-center w-full py-2.5 bg-white text-[var(--rmf-green)] rounded-lg text-xs font-bold uppercase tracking-wider hover:bg-white/95 transition-all shadow-sm">
+              <Link href="/orders" className="inline-flex items-center justify-center w-full py-2.5 bg-white text-[var(--rmf-green)] rounded-2xl text-xs font-bold uppercase tracking-wider hover:bg-white/95 transition-all shadow-sm">
                 Go to My Orders
               </Link>
             </div>
@@ -154,14 +154,14 @@ export default function ContactPage() {
               </p>
 
               {successMessage && (
-                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg mb-8 animate-reveal">
+                <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 p-4 rounded-2xl mb-8 animate-reveal">
                   <CheckCircle2 size={20} className="text-green-600 flex-shrink-0" />
                   <p className="text-sm font-medium">{successMessage}</p>
                 </div>
               )}
 
               {errorMessage && (
-                <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg mb-8 animate-reveal">
+                <div className="flex items-center gap-3 bg-red-50 border border-red-200 text-red-800 p-4 rounded-2xl mb-8 animate-reveal">
                   <ShieldAlert size={20} className="text-red-600 flex-shrink-0" />
                   <p className="text-sm font-medium">{errorMessage}</p>
                 </div>

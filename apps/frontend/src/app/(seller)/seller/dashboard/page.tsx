@@ -105,7 +105,7 @@ export default function SellerDashboardPage() {
     return (
       <Layout>
         <div className="min-h-[80vh] flex items-center justify-center p-12 animate-reveal">
-          <div className="max-w-2xl w-full bg-white border border-[#e0e0e0] rounded-lg p-16 shadow-2xl">
+          <div className="max-w-2xl w-full bg-white border border-[#e0e0e0] rounded-2xl p-16 shadow-2xl">
             <div className="h-2 bg-[#ffedd5] -mx-16 -mt-16 mb-16" />
             <div className="text-center space-y-4 mb-12">
               <p className="text-[11px] font-black text-[#ff6b00] uppercase tracking-[0.22em]">Status: Under Review</p>
@@ -154,7 +154,7 @@ export default function SellerDashboardPage() {
       <div className="animate-reveal space-y-8 pb-16">
 
         {/* ── Header Bar ── */}
-        <div className="relative overflow-hidden rounded-lg border border-[#0b4b32]/20 bg-[#e05300] px-6 py-6 text-white shadow-sm md:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="relative overflow-hidden rounded-2xl border border-[#0b4b32]/20 bg-[#e05300] px-6 py-6 text-white shadow-sm md:px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
             <div className="absolute -right-4 top-0 text-[180px] font-sans leading-none select-none">SHOP</div>
           </div>
@@ -187,7 +187,7 @@ export default function SellerDashboardPage() {
             { label: 'Products Listed', val: String(products.length), unit: '', sub: 'Active in your shop', icon: <Store size={14} className="text-[#ff6b00]" />, accent: 'border-l-[#1b1c1c]', valColor: 'text-[#1b1c1c]', action: { label: 'Manage', href: '/seller/products' } },
             { label: 'Avg. Rating', val: ratingValue > 0 ? ratingValue.toFixed(1) : 'New', unit: ratingValue > 0 ? '/ 5' : '', sub: `${sellerStats.totalReviews || 0} customer reviews`, icon: <Star size={14} className="text-[#ff6b00]" />, accent: 'border-l-[#ff6b00]', valColor: 'text-[#ff6b00]', action: { label: 'See Reviews', href: '/seller/reviews' } },
           ].map((stat, i) => (
-            <div key={i} className={`rounded-lg bg-white border border-[#e0e0e0] border-l-4 ${stat.accent} p-5 hover:shadow-md transition-all`}>
+            <div key={i} className={`rounded-2xl bg-white border border-[#e0e0e0] border-l-4 ${stat.accent} p-5 hover:shadow-md transition-all`}>
               <div className="flex justify-between items-start mb-4">
                 <p className="text-[9px] font-black text-[#414844] uppercase tracking-widest">{stat.label}</p>
                 <span className="rounded bg-[#f7faf8] p-1.5 flex items-center justify-center">{stat.icon}</span>
@@ -276,7 +276,7 @@ export default function SellerDashboardPage() {
           {/* Sidebar */}
           <div className="space-y-5">
             {/* Revenue */}
-            <div className="rounded-lg bg-[#e05300] text-white p-6 space-y-6">
+            <div className="rounded-2xl bg-[#e05300] text-white p-6 space-y-6">
               <div className="flex items-center gap-3 border-b border-white/10 pb-5">
                 <BarChart2 size={24} className="text-[#ffedd5]" />
                 <div>
@@ -294,7 +294,7 @@ export default function SellerDashboardPage() {
             </div>
 
             {/* Performance */}
-            <div className="rounded-lg bg-white border border-[#e0e0e0] p-6 space-y-5">
+            <div className="rounded-2xl bg-white border border-[#e0e0e0] p-6 space-y-5">
               <p className="text-[9px] font-black text-[#1b1c1c] uppercase tracking-[0.18em] border-b border-[#f0eded] pb-4">Shop Performance</p>
               {[
                 { label: 'Avg. Prep Time', val: sellerStats.avgPrepTime === null || sellerStats.avgPrepTime === undefined ? 'No data' : `${sellerStats.avgPrepTime} min`, color: 'text-green-600' },
@@ -309,7 +309,7 @@ export default function SellerDashboardPage() {
             </div>
 
             {/* Tip */}
-            <div className="rounded-lg border border-[#ffedd5] bg-[#e8f5ed] p-6 space-y-3">
+            <div className="rounded-2xl border border-[#ffedd5] bg-[#e8f5ed] p-6 space-y-3">
               <p className="text-[9px] font-black text-[#ff6b00] uppercase tracking-[0.18em]">Seller Tip</p>
               <p className="text-sm text-[#1b1c1c]/80 leading-relaxed font-medium">
                 Shops with 5+ product photos get <strong>3× more clicks</strong>. Update your listings today!
@@ -320,7 +320,7 @@ export default function SellerDashboardPage() {
             </div>
 
             {/* Quick links */}
-            <div className="overflow-hidden rounded-lg bg-white border border-[#e0e0e0] divide-y divide-[#f0eded]">
+            <div className="overflow-hidden rounded-2xl bg-white border border-[#e0e0e0] divide-y divide-[#f0eded]">
               {[
                 { icon: <ShoppingBag size={16} className="text-[#ff6b00]" />, label: 'Inventory & Stock', href: '/seller/inventory' },
                 { icon: <Tag size={16} className="text-[#ff6b00]" />, label: 'Promotions & Discounts', href: '/seller/promotions' },
@@ -339,7 +339,7 @@ export default function SellerDashboardPage() {
         </div>
 
         {/* ── Analytics ── */}
-        <div className="rounded-lg bg-white border border-[#e0e0e0] mx-6 p-6">
+        <div className="rounded-2xl bg-white border border-[#e0e0e0] mx-6 p-6">
           <div className="flex justify-between items-end border-b border-[#f0eded] pb-6 mb-8">
             <div>
               <p className="text-[9px] font-black text-[#ff6b00] uppercase tracking-[0.18em] mb-2">Performance</p>
